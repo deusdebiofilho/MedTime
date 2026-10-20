@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #f8fcfc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
+    color: #153f50;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+    text-align: center;
+}
+
+/* LOGOTIPO */
+
+.logo {
+    margin-bottom: 28px;
+}
+
+.logo-ilustracao {
+    width: 165px;
+    height: 145px;
+    position: relative;
+    margin: 0 auto 10px;
+}
+
+.relogio {
+    width: 140px;
+    height: 140px;
+    border: 8px solid #078f91;
+    border-right-color: #075b83;
+    border-bottom-color: #075b83;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+}
+
+.marca {
+    position: absolute;
+    background: #153f50;
+    border-radius: 3px;
+}
+
+.marca-12,
+.marca-6 {
+    width: 4px;
+    height: 9px;
+    left: 60px;
+}
+
+.marca-12 {
+    top: 8px;
+}
+
+.marca-6 {
+    bottom: 8px;
+}
+
+.marca-3,
+.marca-9 {
+    width: 9px;
+    height: 4px;
+    top: 60px;
+}
+
+.marca-3 {
+    right: 8px;
+}
+
+.marca-9 {
+    left: 8px;
+}
+
+.ponteiro {
+    position: absolute;
+    background: #153f50;
+    width: 5px;
+    border-radius: 5px;
+    left: 60px;
+    bottom: 60px;
+    transform-origin: bottom center;
+}
+
+.ponteiro-hora {
+    height: 40px;
+    transform: rotate(-40deg);
+}
+
+.ponteiro-minuto {
+    height: 52px;
+    transform: rotate(55deg);
+}
+
+.centro {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #153f50;
+    left: 55px;
+    top: 55px;
+}
+
+.capsula {
+    width: 43px;
+    height: 23px;
+    position: absolute;
+    right: 0;
+    bottom: 12px;
+    transform: rotate(-48deg);
+    border: 3px solid white;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #075b83 0%,
+        #075b83 50%,
+        #08a78f 50%,
+        #08a78f 100%
+    );
+    box-shadow: 0 2px 5px #0002;
+}
+
+.capsula span {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: white;
+    left: 50%;
+}
+
+.nome-logo {
+    font-size: 65px;
+    line-height: 1.1;
+    color: #079b8a;
+    letter-spacing: -2px;
+}
+
+.logo h1 {
+    font-size: 65px;
+    font-weight: normal;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.logo h1 span {
+    color: #079b8a;
+}
+
+.logo h1 strong {
+    color: #073f54;
+}
+
+.slogan {
+    margin-top: 8px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #17657b;
+}
+
+/* TÍTULOS */
+
+.formulario h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+    color: #153f50;
+}
+
+.descricao {
+    font-size: 15px;
+    color: #71828e;
+    margin-bottom: 25px;
+}
+
+/* CAMPOS */
+
+.campo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    padding: 0 13px;
+    margin-bottom: 15px;
+    background: white;
+    border: 1.5px solid #b6d9d5;
+    border-radius: 9px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo:focus-within {
+    border-color: #079b8a;
+    box-shadow: 0 0 0 3px #079b8a18;
+}
+
+.icone {
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #078f83;
+    margin-right: 10px;
+}
+
+.icone svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.campo input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    color: #153f50;
+}
+
+.campo input::placeholder {
+    color: #8796a0;
+}
+
+.mostrar-senha {
+    border: none;
+    background: transparent;
+    color: #075b83;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* RECUPERAR SENHA */
+
+.opcoes {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -4px;
+    margin-bottom: 20px;
+}
+
+.opcoes a {
+    color: #079b8a;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.opcoes a:hover,
+.cadastro a:hover {
+    text-decoration: underline;
+}
+
+/* BOTÃO ENTRAR */
+
+.botao-entrar {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(100deg, #08a78f, #0796ad);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.botao-entrar:hover {
+    opacity: 0.9;
+}
+
+/* LOGIN SOCIAL */
+
+.separador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0 18px;
+    color: #77858e;
+    font-size: 13px;
+}
+
+.separador::before,
+.separador::after {
+    content: "";
+    height: 1px;
+    background: #dce5e7;
+    flex: 1;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 12px;
+}
+
+.botao-social {
+    flex: 1;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #d7e2e4;
+    border-radius: 8px;
+    background: white;
+    color: #344b56;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.botao-social:hover {
+    background: #f1f8f7;
+}
+
+.botao-social svg {
+    width: 19px;
+    height: 19px;
+}
+
+/* CADASTRO */
+
+.cadastro {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #657782;
+}
+
+.cadastro a {
+    color: #079b8a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#mensagem {
+    margin-top: 15px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    body {
+        padding: 25px 22px;
+    }
+
+    .logo-ilustracao {
+        transform: scale(0.9);
+        margin-bottom: 0;
+    }
+
+    .logo h1 {
+        font-size: 55px;
+    }
+
+    .slogan {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .formulario h2 {
+        font-size: 23px;
+    }
+}
