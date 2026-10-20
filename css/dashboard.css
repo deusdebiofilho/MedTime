@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --teal: #10b8a8;
+  --teal-dark: #078d8b;
+  --teal-light: #e8fbf8;
+  --navy: #163b59;
+  --text: #17212b;
+  --muted: #7d8793;
+  --border: #e7edf0;
+  --surface: #ffffff;
+  --page: #f7f9fb;
+  --green: #32c99a;
+  --shadow: 0 8px 28px rgba(25, 59, 76, .06);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: "DM Sans", "Nunito Sans", Arial, sans-serif;
+  font-size: 15px;
+}
+button, a { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; }
+.app-shell { min-height: 100vh; }
+
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 20;
+  width: 244px;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 24px 16px 18px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 8px 35px;
+  color: var(--teal-dark);
+}
+.brand-mark { width: 68px; height: 68px; display: block; }
+.brand-mark svg { width: 100%; height: 100%; }
+.brand-name { font-family: "Nunito Sans", sans-serif; font-size: 25px; font-weight: 800; letter-spacing: -.8px; }
+.brand-tagline { margin-top: 2px; font-size: 8px; font-weight: 700; letter-spacing: 1.4px; color: #6b8791; }
+.main-nav { display: flex; flex-direction: column; gap: 9px; }
+.nav-link {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 14px;
+  border-radius: 13px;
+  color: #263747;
+  transition: background .18s ease, color .18s ease;
+}
+.nav-link:hover { background: #f0fbf9; color: var(--teal-dark); }
+.nav-link.active { color: #fff; background: var(--teal); font-weight: 700; box-shadow: 0 6px 14px rgba(16,184,168,.16); }
+.nav-icon { width: 25px; text-align: center; font-size: 25px; line-height: 1; color: var(--teal-dark); }
+.nav-link.active .nav-icon { color: #fff; }
+.sidebar-footer { display: flex; align-items: center; gap: 8px; margin-top: auto; padding: 14px 8px 0; color: var(--muted); font-size: 11px; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.mobile-close, .menu-toggle, .sidebar-backdrop { display: none; }
+
+.main-content { margin-left: 244px; min-height: 100vh; padding: 0 42px 20px; }
+.topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+.breadcrumb { display: flex; align-items: center; gap: 10px; color: #7a8791; font-size: 13px; }
+.breadcrumb-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; }
+.breadcrumb-separator { color: #c3cbd0; }
+.topbar-actions { display: flex; align-items: center; gap: 25px; }
+.icon-button { position: relative; width: 43px; height: 43px; display: grid; place-items: center; border: 1px solid #bcece6; border-radius: 50%; background: #fff; color: var(--teal-dark); }
+.icon-button svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.notification-dot { position: absolute; top: 8px; right: 8px; width: 7px; height: 7px; border: 1px solid #fff; border-radius: 50%; background: #ff8e76; }
+.profile-shortcut { display: flex; align-items: center; gap: 10px; }
+.avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: var(--teal-light); color: var(--teal-dark); font-weight: 800; font-size: 17px; }
+.profile-shortcut-text { display: flex; flex-direction: column; gap: 3px; }
+.profile-shortcut-text strong { font-size: 13px; font-weight: 700; }
+.profile-shortcut-text small { color: var(--muted); font-size: 11px; }
+
+.welcome-section { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 34px 0 25px; }
+.eyebrow, .card-overline { margin: 0 0 7px; color: var(--teal-dark); font-size: 10px; font-weight: 800; letter-spacing: 1.6px; }
+h1, h2, p { margin-top: 0; }
+h1 { margin-bottom: 8px; font-family: "Nunito Sans", sans-serif; font-size: clamp(25px, 3vw, 34px); line-height: 1.2; letter-spacing: -.8px; }
+.wave { font-size: .8em; }
+.welcome-subtitle { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+.today-pill { display: flex; align-items: center; gap: 9px; white-space: nowrap; padding: 11px 15px; border: 1px solid var(--border); border-radius: 12px; background: #fff; color: #536471; font-size: 12px; }
+.calendar-small { color: var(--teal-dark); font-size: 18px; }
+
+.next-dose-card { display: flex; align-items: center; gap: 18px; padding: 22px 25px; border: 1px solid #d9f2ee; border-radius: 17px; background: linear-gradient(110deg, #edfcf9 0%, #fff 78%); box-shadow: var(--shadow); }
+.next-dose-icon { flex: 0 0 54px; width: 54px; height: 54px; display: grid; place-items: center; border-radius: 15px; background: var(--teal); color: white; font-size: 31px; }
+.next-dose-copy { flex: 1; }
+.next-dose-copy .card-overline { margin-bottom: 5px; }
+.next-dose-copy h2 { margin-bottom: 5px; font-size: 18px; }
+.next-dose-copy p:last-child { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+.next-dose-info { min-width: 145px; display: flex; flex-direction: column; gap: 4px; padding-left: 23px; border-left: 1px solid #d6ebe7; }
+.next-dose-info strong { color: var(--teal-dark); font-size: 25px; letter-spacing: -.5px; }
+.next-dose-info span { color: #566673; font-size: 12px; }
+
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin: 35px 0 17px; }
+.section-heading h2 { margin-bottom: 5px; font-family: "Nunito Sans", sans-serif; font-size: 21px; letter-spacing: -.4px; }
+.section-heading p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+.count-badge { padding: 7px 11px; border-radius: 8px; background: #e7f8f5; color: var(--teal-dark); font-size: 11px; font-weight: 700; white-space: nowrap; }
+.medication-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.medication-card { min-width: 0; display: flex; align-items: flex-start; gap: 14px; padding: 18px; border: 1px solid var(--border); border-radius: 15px; background: var(--surface); box-shadow: 0 4px 15px rgba(25,59,76,.025); }
+.medicine-symbol { flex: 0 0 52px; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; background: var(--teal-light); font-size: 27px; }
+.medication-info { min-width: 0; flex: 1; }
+.medication-topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+.medication-info h3 { margin: 1px 0 4px; font-size: 14px; font-weight: 700; line-height: 1.35; }
+.medicine-purpose { margin-bottom: 11px; color: var(--muted); font-size: 12px; }
+.medicine-time { display: flex; align-items: center; gap: 6px; margin-bottom: 13px; color: #687984; font-size: 12px; }
+.time-icon { color: var(--teal-dark); font-size: 16px; }
+.dose-status { display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; border-radius: 7px; background: #fff5e4; color: #9b6812; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.dose-status.taken { background: #e6f8ef; color: #16875d; }
+.dose-status.missed { background: #fff0ee; color: #c45448; }
+.dose-actions { display: flex; flex-wrap: wrap; gap: 7px; }
+.action-button { min-height: 34px; padding: 7px 10px; border: 1px solid transparent; border-radius: 8px; font-size: 11px; font-weight: 700; transition: transform .15s ease, background .15s ease; }
+.action-button:active { transform: scale(.98); }
+.action-button.taken-button { background: var(--teal); color: white; }
+.action-button.taken-button:hover { background: var(--teal-dark); }
+.action-button.missed-button { border-color: #e1e7eb; background: #fff; color: #6c7780; }
+.action-button.missed-button:hover { background: #f6f8f9; }
+.action-button:disabled { opacity: .55; cursor: not-allowed; }
+.bottom-note { display: flex; align-items: center; gap: 13px; margin-top: 24px; padding: 17px 20px; border: 1px solid #e1f3ef; border-radius: 13px; background: #f0fbf8; }
+.bottom-note-icon { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 11px; background: #d9f6ef; color: var(--teal-dark); font-size: 22px; }
+.bottom-note strong { display: block; margin-bottom: 3px; font-size: 12px; }
+.bottom-note p { margin-bottom: 0; color: var(--muted); font-size: 12px; }
+.page-footer { display: flex; justify-content: space-between; gap: 15px; margin-top: 30px; padding: 15px 0 5px; border-top: 1px solid var(--border); color: #99a2a9; font-size: 10px; }
+.toast { position: fixed; right: 24px; bottom: 24px; z-index: 50; max-width: min(360px, calc(100vw - 32px)); padding: 13px 17px; border-radius: 11px; background: #173d53; color: #fff; box-shadow: 0 8px 28px rgba(0,0,0,.18); opacity: 0; transform: translateY(10px); pointer-events: none; transition: .22s ease; font-size: 13px; }
+.toast.show { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1100px) {
+  .sidebar { width: 220px; }
+  .main-content { margin-left: 220px; padding: 0 27px 20px; }
+  .medication-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .sidebar { width: 260px; transform: translateX(-105%); transition: transform .22s ease; box-shadow: 15px 0 35px rgba(16,39,52,.1); }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-backdrop.show { display: block; position: fixed; inset: 0; z-index: 15; background: rgba(14,34,45,.35); }
+  .mobile-close { display: block; position: absolute; top: 12px; right: 12px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: #f1f6f6; font-size: 23px; color: var(--navy); }
+  .main-content { margin-left: 0; padding: 0 18px 18px; }
+  .topbar { height: 68px; }
+  .menu-toggle { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 10px; background: #fff; color: var(--navy); font-size: 19px; }
+  .breadcrumb { margin-right: auto; margin-left: 12px; font-size: 11px; }
+  .topbar-actions { gap: 12px; }
+  .icon-button { width: 37px; height: 37px; }
+  .profile-shortcut-text { display: none; }
+  .avatar { width: 37px; height: 37px; }
+  .welcome-section { align-items: flex-start; flex-direction: column; padding: 27px 0 20px; }
+  .today-pill { align-self: flex-start; }
+  .next-dose-card { align-items: flex-start; flex-wrap: wrap; padding: 18px; gap: 13px; }
+  .next-dose-icon { width: 46px; height: 46px; flex-basis: 46px; font-size: 27px; }
+  .next-dose-copy { min-width: calc(100% - 65px); }
+  .next-dose-info { width: 100%; min-width: 0; margin-top: 5px; padding: 12px 0 0; border-left: 0; border-top: 1px solid #d6ebe7; }
+  .next-dose-info strong { font-size: 22px; }
+  .section-heading { margin-top: 28px; }
+  .medication-card { padding: 15px; }
+  .page-footer { flex-direction: column; gap: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

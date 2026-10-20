@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedTime | Início</title>
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <script src="../js/dashboard.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="dashboard.html" aria-label="MedTime - Início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <circle cx="29" cy="29" r="23" fill="none" stroke="currentColor" stroke-width="3"/>
+            <path d="M29 13v4M29 41v4M13 29h4M41 29h4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M29 29l-10-8M29 29l13-12" stroke="#173D5C" stroke-width="3.2" stroke-linecap="round"/>
+            <g transform="translate(34 34) rotate(-42)">
+              <rect x="0" y="0" width="11" height="22" rx="5.5" fill="#0FB8A8" stroke="#087F83" stroke-width="1.5"/>
+              <path d="M0 11h11" stroke="#fff" stroke-width="1.5"/>
+              <path d="M5.5 2v7" stroke="#fff" stroke-width="1" opacity=".8"/>
+            </g>
+          </svg>
+        </span>
+        <span class="brand-name">MedTime</span>
+        <span class="brand-tagline">CUIDAR DO SEU TEMPO</span>
+      </a>
+
+      <button class="mobile-close" id="closeMenu" type="button" aria-label="Fechar menu">×</button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="nav-link active" href="dashboard.html" aria-current="page"><span class="nav-icon">⌂</span><span>Início</span></a>
+        <a class="nav-link" href="calendario.html"><span class="nav-icon">▦</span><span>Calendário</span></a>
+        <a class="nav-link" href="historico.html"><span class="nav-icon">◷</span><span>Histórico</span></a>
+        <a class="nav-link" href="perfil.html"><span class="nav-icon">♙</span><span>Perfil</span></a>
+      </nav>
+      <div class="sidebar-footer">
+        <span class="status-dot"></span>
+        <span>Seu cuidado, no seu tempo.</span>
+      </div>
+    </aside>
+
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="menu-toggle" id="openMenu" type="button" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumb"><span class="breadcrumb-dot"></span> Área do usuário <span class="breadcrumb-separator">/</span> Início</div>
+        <div class="topbar-actions">
+          <button class="icon-button notification-button" id="notificationButton" type="button" aria-label="Avisos" title="Avisos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+            <span class="notification-dot"></span>
+          </button>
+          <a class="profile-shortcut" href="perfil.html">
+            <span class="avatar" aria-hidden="true">U</span>
+            <span class="profile-shortcut-text"><strong id="headerUserName">Usuário</strong><small>Meu perfil</small></span>
+          </a>
+        </div>
+      </header>
+
+      <section class="welcome-section">
+        <div>
+          <p class="eyebrow">SEJA BEM-VINDO(A)</p>
+          <h1>Olá, <span id="greetingName">Usuário</span>! <span class="wave" aria-hidden="true">👋</span></h1>
+          <p class="welcome-subtitle">Vamos cuidar do seu tempo, um cuidado de cada vez.</p>
+        </div>
+        <div class="today-pill"><span class="calendar-small" aria-hidden="true">▦</span><span id="todayDate">Hoje</span></div>
+      </section>
+
+      <section class="next-dose-card" aria-labelledby="nextDoseTitle">
+        <div class="next-dose-icon" aria-hidden="true">◷</div>
+        <div class="next-dose-copy">
+          <p class="card-overline">FIQUE ATENTO(A)</p>
+          <h2 id="nextDoseTitle">Sua próxima dose</h2>
+          <p id="nextDoseDescription">Confira os medicamentos programados para hoje.</p>
+        </div>
+        <div class="next-dose-info" id="nextDoseInfo">
+          <strong id="nextDoseTime">08:00</strong>
+          <span id="nextDoseMedicine">Losartana 50 mg</span>
+        </div>
+      </section>
+
+      <section class="section-heading">
+        <div>
+          <h2>Medicamentos de hoje</h2>
+          <p>Acompanhe sua rotina e registre cada dose.</p>
+        </div>
+        <span class="count-badge" id="doseCount">3 doses</span>
+      </section>
+
+      <section class="medication-list" id="medicationList" aria-label="Medicamentos programados para hoje">
+        <!-- Os cartões são preenchidos pelo JavaScript. -->
+      </section>
+
+      <section class="bottom-note">
+        <span class="bottom-note-icon" aria-hidden="true">♡</span>
+        <div>
+          <strong>Um passo de cada vez</strong>
+          <p>Registre cada dose para manter seu histórico atualizado.</p>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>© 2026 MedTime</span>
+        <span>Uma rotina mais organizada começa aqui.</span>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
