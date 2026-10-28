@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedTime - Criar conta</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+
+<body>
+    <main class="pagina">
+        <section class="cadastro">
+
+            <!-- Logotipo -->
+            <div class="area-imagem">
+                <img
+                    src="./img/logoMedtime.png"
+                    alt="MedTime - Cuidar do seu tempo é cuidar de você"
+                    class="imagem-medtime"
+                >
+            </div>
+
+      
+            <h1>Crie sua conta</h1>
+
+            <p class="subtitulo">
+                Preencha seus dados para se cadastrar
+            </p>
+
+            <form id="formCadastro">
+
+                <!-- Nome completo -->
+                <div class="campo">
+                    <div class="icone">
+                        <img
+                            src="./img/iconePessoa .png"
+                            alt=""
+                            class="imagem-icone"
+                        >
+                    </div>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Nome completo"
+                        autocomplete="name"
+                        minlength="3"
+                        required
+                    >
+                </div>
+
+                <!-- E-mail -->
+                <div class="campo">
+                    <div class="icone">
+                        <img
+                            src="./img/IconeEmail.png"
+                            alt=""
+                            class="imagem-icone"
+                        >
+                    </div>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="E-mail"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <!-- Telefone -->
+                <div class="campo">
+                    <div class="icone">
+                        <img
+                            src="./img/IconeTelefone.png"
+                            alt=""
+                            class="imagem-icone"
+                        >
+                    </div>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="Telefone"
+                        autocomplete="tel"
+                        required
+                    >
+                </div>
+
+                <!-- Senha -->
+                <div class="campo">
+                    <div class="icone">
+                        <img
+                            src="./img/IconeSenha.png"
+                            alt=""
+                            class="imagem-icone"
+                        >
+                    </div>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Senha"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        onclick="alternarSenha('senha', this)"
+                        aria-label="Mostrar senha"
+                        aria-pressed="false"
+                    >
+                        <svg class="icone-olho"
+                             viewBox="0 0 24 24"
+                             aria-hidden="true">
+                            <path
+                                class="contorno-olho"
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                            />
+                            <circle cx="12" cy="12" r="3"/>
+                            <path class="risco-olho"
+                                  d="M4 4 20 20"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Confirmar senha -->
+                <div class="campo">
+                    <div class="icone">
+                        <img
+                            src="./img/IconeSenha.png"
+                            alt=""
+                            class="imagem-icone"
+                        >
+                    </div>
+
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        name="confirmarSenha"
+                        placeholder="Confirmar senha"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        onclick="alternarSenha('confirmarSenha', this)"
+                        aria-label="Mostrar confirmação de senha"
+                        aria-pressed="false"
+                    >
+                        <svg class="icone-olho"
+                             viewBox="0 0 24 24"
+                             aria-hidden="true">
+                            <path
+                                class="contorno-olho"
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                            />
+                            <circle cx="12" cy="12" r="3"/>
+                            <path class="risco-olho"
+                                  d="M4 4 20 20"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Termos de uso -->
+                <label class="termos">
+                    <input
+                        type="checkbox"
+                        id="aceitarTermos"
+                        required
+                    >
+
+                    <span>
+                        Li e aceito os termos de uso e a política de privacidade.
+                    </span>
+                </label>
+
+                <!-- Botão cadastrar -->
+                <button type="submit" class="botao-cadastrar">
+                    Cadastrar
+                </button>
+
+            </form>
+
+            <!-- Link para entrar -->
+            <p class="login">
+                Já tem uma conta?
+                <a href="login.html">Entrar</a>
+            </p>
+
+            <p id="mensagem" role="status" aria-live="polite"></p>
+
+        </section>
+    </main>
+
+    <script>
+        // Mostrar ou ocultar a senha
+        function alternarSenha(id, botao) {
+            const campo = document.getElementById(id);
+            const mostrando = campo.type === "password";
+
+            campo.type = mostrando ? "text" : "password";
+
+            botao.classList.toggle("visivel", mostrando);
+            botao.setAttribute("aria-pressed", String(mostrando));
+
+            botao.setAttribute(
+                "aria-label",
+                mostrando ? "Ocultar senha" : "Mostrar senha"
+            );
+        }
+
+        // Validar o formulário
+        document.getElementById("formCadastro")
+            .addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const senha = document.getElementById("senha").value;
+                const confirmar =
+                    document.getElementById("confirmarSenha").value;
+
+                const mensagem = document.getElementById("mensagem");
+
+                if (senha !== confirmar) {
+                    mensagem.textContent = "As senhas não coincidem!";
+                    mensagem.className = "mensagem-erro";
+
+                    document.getElementById("confirmarSenha").focus();
+                    return;
+                }
+
+                mensagem.textContent =
+                    "Dados validados! Para salvar sua conta, conecte o formulário a um sistema de cadastro.";
+
+                mensagem.className = "mensagem-sucesso";
+            });
+    </script>
+</body>
+</html>
