@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedTime - Login</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <!-- LOGOTIPO -->
+        <header class="logo">
+            <img
+                src="./img/icone logotipo.jpeg"
+                alt="MedTime - Cuidar do seu tempo é cuidar de você"
+                class="logo-imagem"
+            >
+        </header>
+
+        <!-- FORMULÁRIO DE LOGIN -->
+        <section class="formulario">
+
+            <h2>Bem-vindo de volta!</h2>
+
+            <p class="descricao">
+                Faça login para continuar
+            </p>
+
+            <form id="formLogin">
+
+                <!-- CAMPO E-MAIL -->
+                <div class="campo">
+
+                    <span class="icone">
+                        <img
+                            src="./img/icone email.jpeg"
+                            alt=""
+                        >
+                    </span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="E-mail"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+                <!-- CAMPO SENHA -->
+                <div class="campo">
+
+                    <span class="icone">
+                        <img
+                            src="./img/icone senha.jpeg"
+                            alt=""
+                        >
+                    </span>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Senha"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        id="mostrarSenha"
+                        aria-label="Mostrar senha"
+                        aria-pressed="false"
+                    >
+                        <img
+                            src="imagens/icone-visualizar.png"
+                            alt=""
+                        >
+                    </button>
+
+                </div>
+
+                <!-- RECUPERAR SENHA -->
+                <div class="opcoes">
+                    <a href="recuperar-senha.html">
+                        Esqueceu a senha?
+                    </a>
+                </div>
+
+                <!-- BOTÃO ENTRAR -->
+                <button type="submit" class="botao-entrar">
+                    Entrar
+                </button>
+
+            </form>
+
+            <!-- SEPARADOR -->
+            <div class="separador">
+                <span></span>
+                <p>ou continue com</p>
+                <span></span>
+            </div>
+
+            <!-- LOGIN SOCIAL -->
+            <div class="redes-sociais">
+
+                <button
+                    type="button"
+                    class="botao-social"
+                    onclick="loginSocial('Google')"
+                >
+                    <img
+                        src="./img/iconeGoogle.png"
+                        alt=""
+                    >
+                    <span>Google</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="botao-social"
+                    onclick="loginSocial('Apple')"
+                >
+                    <img
+                        src="./img/iconeAplle.png"
+                        alt=""
+                    >
+                    <span>Apple</span>
+                </button>
+
+            </div>
+
+            <!-- CADASTRO -->
+            <p class="cadastro">
+                Ainda não tem uma conta?
+                <a href="index.html">Cadastre-se</a>
+            </p>
+
+            <!-- MENSAGENS DO SISTEMA -->
+            <p id="mensagem" role="status" aria-live="polite"></p>
+
+        </section>
+
+    </main>
+
+    <script>
+        const formLogin = document.getElementById("formLogin");
+        const campoSenha = document.getElementById("senha");
+        const botaoMostrarSenha =
+            document.getElementById("mostrarSenha");
+        const mensagem = document.getElementById("mensagem");
+
+        // MOSTRAR OU OCULTAR SENHA
+        botaoMostrarSenha.addEventListener("click", function () {
+
+            const mostrar = campoSenha.type === "password";
+
+            campoSenha.type = mostrar ? "text" : "password";
+
+            botaoMostrarSenha.setAttribute(
+                "aria-label",
+                mostrar ? "Ocultar senha" : "Mostrar senha"
+            );
+
+            botaoMostrarSenha.setAttribute(
+                "aria-pressed",
+                String(mostrar)
+            );
+        });
+
+        // ENVIO DO FORMULÁRIO
+        formLogin.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            mensagem.textContent =
+                "Interface pronta! Conecte o sistema de autenticação para entrar.";
+        });
+
+        // LOGIN SOCIAL
+        function loginSocial(provedor) {
+
+            mensagem.textContent =
+                "O login com " + provedor +
+                " precisa ser configurado para funcionar.";
+        }
+    </script>
+
+</body>
+</html>
