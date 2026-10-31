@@ -1,11 +1,652 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>MedTime — Histórico</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
+
+    <div class="app">
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+
+               <img src="img/iconeMedTime.jpeg" alt="MedTime - Cuidado no seu tempo" class="brand-logo" > 
+            
+
+           <!-- MENU PRINCIPAL -->
+<nav class="menu" aria-label="Menu principal">
+
+    <!-- Início -->
+    <a  href="#">
+        <img src="img/icone_inicio.png" alt="" class="menu-icon">
+        <span>Início</span>
+    </a>
+
+    <!-- Calendário -->
+    <a href="#">
+        <img src="img/calendario.png" alt="" class="menu-icon">
+        <span>Calendário</span>
+    </a>
+
+    <!-- Rotina -->
+    <a href="#">
+        <img src="img/icone_rotina.png" alt="" class="menu-icon">
+        <span>Rotina</span>
+    </a>
+
+    <!-- Medicamentos -->
+    <a href="#">
+        <img src="img/medicamentos 2026-10-29 at 16.52.07.jpeg" alt="" class="menu-icon">
+        <span>Medicamentos</span>
+    </a>
+
+    <!-- Histórico --> 
+    <a  class="active"
+    </a  href="#">
+        <img src="img/historico 2026-10-29 at 16.50.18.jpeg" alt="" class="menu-icon">
+        <span>Histórico</span>
+    </a>
+       <!-- Perfil -->
+    <a href="#">
+        <img src="img/perfil 2026-10-29 at 16.49.51.jpeg" alt="" class="menu-icon">
+        <span>Perfil</span>
+    </a>
+
+    <!-- Configurações -->
+    <a href="#">
+        <img src="img/configuracoes 2026-10-29 at 16.50.05.jpeg" alt="" class="menu-icon">
+        <span>Configurações</span>
+    </a>
+
+
+</nav>
+
+                <div class="help-card">
+
+                    <span class="help-icon">♡</span>
+
+  
+
+ 
     
+
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main">
+
+            <section class="content">
+
+                <!-- CABEÇALHO CORRIGIDO -->
+                <div class="page-heading">
+
+                    <div class="heading-text">
+
+                        <h1>Histórico</h1>
+
+                        <p class="subtitle">
+                            Acompanhe sua jornada e veja como está a sua adesão aos medicamentos
+                        </p>
+
+                    </div>
+
+                    <!-- NOTIFICAÇÃO E PERFIL -->
+                    <div class="acoes-usuario">
+
+                        <button
+                            class="botao-notificacao"
+                            aria-label="Notificações"
+                            title="Notificações">
+
+                            <i class="fa-regular fa-bell"></i>
+
+                        </button>
+
+                        <i
+                            class="fa-regular fa-user icone-perfil"
+                            aria-label="Perfil do usuário">
+                        </i>
+
+                        <span class="nome-usuario">
+                            Xxxxxxxxxx
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FILTROS DE PERÍODO -->
+                <div class="period-tabs" role="group" aria-label="Período do histórico">
+
+                    <button class="period active" data-period="7">
+                        Últimos 7 dias
+                    </button>
+
+                    <button class="period" data-period="30">
+                        Últimos 30 dias
+                    </button>
+
+                    <button class="period" data-period="90">
+                        Últimos 90 dias
+                    </button>
+
+                </div>
+
+
+                <!-- PAINÉIS DO HISTÓRICO -->
+                <div class="dashboard-grid">
+
+                    <!-- REGISTROS DE MEDICAMENTOS -->
+                    <section class="history-panel">
+
+                        <div class="section-title">
+
+                            <div>
+                                <h2>Registros de medicamentos</h2>
+                                <p>Confira os horários e o status de cada dose.</p>
+                            </div>
+
+                            <button class="filter-button" id="filterButton">
+                                ☷
+                                <span>Todos os status</span>
+                                ⌄
+                            </button>
+
+                        </div>
+
+
+                        <!-- HOJE -->
+                        <div class="day-heading">
+
+                            <span>Hoje</span>
+
+                            <span class="day-date">
+                                22 de junho de 2026
+                            </span>
+
+                        </div>
+
+                        <div class="med-list" id="todayList">
+
+                            <article class="med-row" data-status="taken">
+
+                                <time>08:00</time>
+
+                                <span class="status-symbol taken">✓</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Dipirona 50mg</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag taken">Tomado</span>
+                                    <small>22/06/26 às 08:00</small>
+                                </div>
+
+                            </article>
+
+
+                            <article class="med-row" data-status="missed">
+
+                                <time>10:00</time>
+
+                                <span class="status-symbol missed">×</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Paracetamol 50mg</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag missed">Não tomado</span>
+                                    <small>22/06/26 às 10:00</small>
+                                </div>
+
+                            </article>
+
+
+                            <article class="med-row" data-status="late">
+
+                                <time>14:00</time>
+
+                                <span class="status-symbol late">◷</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Anticoncepcional</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag late">Atrasado</span>
+                                    <small>22/06/26 às 14:15</small>
+                                </div>
+
+                            </article>
+
+
+                            <article class="med-row" data-status="pending">
+
+                                <time>22:00</time>
+
+                                <span class="status-symbol pending">◷</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Donepezila 10mg</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag pending">Pendente</span>
+                                    <small>22/06/26 às 22:00</small>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+                        <!-- ONTEM -->
+                        <div class="day-heading">
+
+                            <span>Ontem</span>
+
+                            <span class="day-date">
+                                21 de junho de 2026
+                            </span>
+
+                        </div>
+
+                        <div class="med-list">
+
+                            <article class="med-row" data-status="late">
+
+                                <time>08:00</time>
+
+                                <span class="status-symbol late">◷</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Dipirona 50mg</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag late">Atrasado</span>
+                                    <small>21/06/26 às 08:20</small>
+                                </div>
+
+                            </article>
+
+
+                            <article class="med-row" data-status="missed">
+
+                                <time>10:00</time>
+
+                                <span class="status-symbol missed">×</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Donepezila 10mg</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag missed">Não tomado</span>
+                                    <small>21/06/26 às 10:00</small>
+                                </div>
+
+                            </article>
+
+
+                            <article class="med-row" data-status="taken">
+
+                                <time>14:00</time>
+
+                                <span class="status-symbol taken">✓</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Anticoncepcional</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag taken">Tomado</span>
+                                    <small>21/06/26 às 14:00</small>
+                                </div>
+
+                            </article>
+
+
+                            <article class="med-row" data-status="taken">
+
+                                <time>22:00</time>
+
+                                <span class="status-symbol taken">✓</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Alta D+Call 300mg</strong>
+                                    <small>1 comprimido</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag taken">Tomado</span>
+                                    <small>21/06/26 às 22:00</small>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+                        <!-- SÁBADO -->
+                        <div class="day-heading older">
+
+                            <span>Sábado</span>
+
+                            <span class="day-date">
+                                20 de junho de 2026
+                            </span>
+
+                        </div>
+
+                        <div class="med-list older-list">
+
+                            <article class="med-row" data-status="taken">
+
+                                <time>08:00</time>
+
+                                <span class="status-symbol taken">✓</span>
+
+                                <span class="medicine-icon">
+                                    <i class="fa-solid fa-capsules"></i>
+                                </span>
+
+                                <div class="med-info">
+                                    <strong>Vitamina D</strong>
+                                    <small>1 cápsula</small>
+                                </div>
+
+                                <div class="med-status">
+                                    <span class="status-tag taken">Tomado</span>
+                                    <small>20/06/26 às 08:00</small>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- COLUNA LATERAL -->
+                    <aside class="right-column">
+
+                        <!-- LEGENDA -->
+                        <section class="side-card legend-card">
+
+                            <div class="side-card-title">
+                                Legenda
+                            </div>
+
+                            <div class="legend-row">
+
+                                <span class="status-symbol taken">✓</span>
+
+                                <div>
+                                    <strong>Tomado</strong>
+                                    <p>Medicamento registrado como tomado</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-row">
+
+                                <span class="status-symbol missed">×</span>
+
+                                <div>
+                                    <strong>Não tomado</strong>
+                                    <p>O medicamento não foi tomado no horário programado</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-row">
+
+                                <span class="status-symbol late">◷</span>
+
+                                <div>
+                                    <strong>Atrasado</strong>
+                                    <p>O medicamento foi tomado após o horário programado</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-row">
+
+                                <span class="status-symbol pending">◷</span>
+
+                                <div>
+                                    <strong>Pendente</strong>
+                                    <p>Ainda dentro do horário programado</p>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- ESTATÍSTICAS -->
+                        <section class="side-card stats-card">
+
+                            <div class="side-card-title">
+                                Estatísticas do período
+                            </div>
+
+                            <div class="stat-row">
+
+                                <span class="stat-icon taken">✓</span>
+
+                                <div>
+                                    <strong id="takenCount">3</strong>
+                                    <p>Tomados</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stat-row">
+
+                                <span class="stat-icon missed">×</span>
+
+                                <div>
+                                    <strong id="missedCount">2</strong>
+                                    <p>Não tomados</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="stat-row">
+
+                                <span class="stat-icon late">◷</span>
+
+                                <div>
+                                    <strong id="lateCount">2</strong>
+                                    <p>Atrasados</p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="adherence">
+
+                                <div class="adherence-icon">↗</div>
+
+                                <div>
+                                    <strong id="adherenceValue">71,43%</strong>
+                                    <p>Taxa de adesão</p>
+                                </div>
+
+                            </div>
+
+                            <div class="progress-track">
+                                <span id="progressFill" style="width: 71.43%"></span>
+                            </div>
+
+                            <p class="stats-note">
+                                Sua consistência é importante. Continue cuidando de você!
+                            </p>
+
+                        </section>
+
+                    </aside>
+
+                </div>
+
+
+                <!-- RODAPÉ -->
+                <footer class="footer">
+
+                    <span>MedTime</span>
+
+                    <span>
+                        Seu cuidado, no seu tempo.
+                        <b>♥</b>
+                    </span>
+
+                </footer>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Selecionar período do histórico
+        const tabs = document.querySelectorAll('.period');
+
+        tabs.forEach(tab => {
+
+            tab.addEventListener('click', () => {
+
+                tabs.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                tab.classList.add('active');
+
+                const days = tab.dataset.period;
+
+                document.querySelector('.day-date').textContent =
+                    days === '7'
+                        ? '22 de junho de 2026 · últimos 7 dias'
+                        : days === '30'
+                            ? '22 de junho de 2026 · últimos 30 dias'
+                            : '22 de junho de 2026 · últimos 90 dias';
+
+            });
+
+        });
+
+
+        // Filtro de status dos medicamentos
+        const filterButton = document.getElementById('filterButton');
+
+        let currentFilter = 'all';
+
+        filterButton.addEventListener('click', () => {
+
+            const options = [
+
+                ['all', 'Todos os status'],
+                ['taken', 'Tomados'],
+                ['missed', 'Não tomados'],
+                ['late', 'Atrasados'],
+                ['pending', 'Pendentes']
+
+            ];
+
+            const index = options.findIndex(
+                option => option[0] === currentFilter
+            );
+
+            const nextIndex = (index + 1) % options.length;
+
+            currentFilter = options[nextIndex][0];
+
+            filterButton.querySelector('span').textContent =
+                options[nextIndex][1];
+
+            document.querySelectorAll('.med-row').forEach(row => {
+
+                row.hidden =
+                    currentFilter !== 'all' &&
+                    row.dataset.status !== currentFilter;
+
+            });
+
+        });
+
+    </script>
+
 </body>
+
 </html>
