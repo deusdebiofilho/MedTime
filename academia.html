@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10233d">
+    <title>Academia Fit | Regressão Linear</title>
+    <link rel="stylesheet" href="academia.css">
+    <script src="academia.js" defer></script>
+</head>
+<body>
+
+<header class="topbar">
+    <a class="brand" href="#inicio">
+        <span class="brand-icon">✦</span>
+        <span>
+            <strong>Academia <em>Fit</em></strong>
+            <small>Mais saúde, mais resultados, mais você!</small>
+        </span>
+    </a>
+
+    <nav class="topnav">
+        <button class="nav-link active" data-view="inicio">⌂ Início</button>
+        <button class="nav-link" data-view="projeto">ⓘ Sobre o projeto</button>
+        <button class="nav-link" data-view="dados">▤ Dados</button>
+    </nav>
+</header>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <p class="side-label">MENU PRINCIPAL</p>
+
+        <button class="side-link active" data-view="inicio">
+            <span>▦</span> Previsão de mensalidade
+        </button>
+
+        <button class="side-link" data-view="dados">
+            <span>▤</span> Visualização dos dados
+        </button>
+
+        <button class="side-link" data-view="graficos">
+            <span>▥</span> Gráficos
+        </button>
+
+        <button class="side-link" data-view="projeto">
+            <span>ⓘ</span> Como funciona?
+        </button>
+
+        <div class="side-quote">
+            <span>“</span>
+            Disciplina hoje,<br>resultados amanhã.
+            <div class="mini-bars">▂▅▇▅▂</div>
+        </div>
+
+        <div class="sidebar-footer">
+            CASE 4 · PROJETO ACADÊMICO
+        </div>
+    </aside>
+
+    <main class="main-content" id="inicio">
+
+        <section class="page-view" id="view-inicio">
+
+            <div class="welcome-row">
+                <div>
+                    <span class="eyebrow">PAINEL INTELIGENTE</span>
+                    <h1>Previsão de mensalidade</h1>
+                    <p>Simule, explore os dados e descubra a estimativa do modelo.</p>
+                </div>
+                <div class="model-status">
+                    <span class="status-dot"></span>
+                    Modelo treinado · <span id="totalRegistros">40</span> registros
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+
+                <section class="card form-card">
+                    <div class="section-heading">
+                        <div class="heading-icon">♙</div>
+                        <div>
+                            <h2>Perfil do cliente</h2>
+                            <p>Preencha as informações para simular.</p>
+                        </div>
+                    </div>
+
+                    <form id="formulario">
+
+                        <div class="field">
+                            <label for="nome">Nome do cliente</label>
+                            <input id="nome" type="text"
+                                placeholder="Ex.: João Santos"
+                                maxlength="100" required>
+                        </div>
+
+                        <div class="field">
+                            <div class="label-line">
+                                <label for="idade">Idade</label>
+                                <span class="optional">Opcional</span>
+                            </div>
+                            <div class="input-suffix">
+                                <input id="idade" type="number"
+                                    min="16" max="100" placeholder="Ex.: 28">
+                                <span>anos</span>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="label-line">
+                                <label>Dias de treino por semana</label>
+                                <strong class="frequency-badge">
+                                    <span id="diasTexto">4</span> dias
+                                </strong>
+                            </div>
+
+                            <input type="range" id="dias"
+                                min="1" max="6" step="1" value="4">
+
+                            <div class="range-labels">
+                                <span>1 dia</span>
+                                <span>6 dias</span>
+                            </div>
+
+                            <div class="day-buttons" id="botoesDias">
+                                <button type="button" data-day="1">1</button>
+                                <button type="button" data-day="2">2</button>
+                                <button type="button" data-day="3">3</button>
+                                <button type="button" data-day="4" class="selected">4</button>
+                                <button type="button" data-day="5">5</button>
+                                <button type="button" data-day="6">6</button>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="objetivo">Objetivo principal</label>
+                            <select id="objetivo">
+                                <option value="Saúde e bem-estar">Saúde e bem-estar</option>
+                                <option value="Emagrecimento">Emagrecimento</option>
+                                <option value="Ganho de massa muscular">Ganho de massa muscular</option>
+                                <option value="Condicionamento físico">Condicionamento físico</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="plano">Plano desejado</label>
+                            <select id="plano">
+                                <option value="Básico">Básico — estimativa do modelo</option>
+                                <option value="Intermediário">Intermediário — apenas simulação</option>
+                                <option value="Premium">Premium — apenas simulação</option>
+                            </select>
+                            <p class="field-help">
+                                O plano é informativo e não altera a previsão estatística.
+                            </p>
+                        </div>
+
+                        <button type="submit" class="primary-button">
+                            <span>▦</span> Calcular mensalidade <span>→</span>
+                        </button>
+
+                        <p class="form-feedback" id="formFeedback" role="status"></p>
+                    </form>
+                </section>
+
+                <div class="right-column">
+
+                    <section class="result-hero">
+                        <div class="result-top">
+                            <div>
+                                <span class="eyebrow light">RESULTADO DA PREVISÃO</span>
+                                <h2>Mensalidade estimada</h2>
+                            </div>
+                            <div class="result-symbol">↗</div>
+                        </div>
+
+                        <div class="price-line">
+                            <strong id="preco">R$ 0,00</strong>
+                            <span class="estimate-pill">Estimativa do modelo</span>
+                        </div>
+
+                        <p class="result-greeting" id="saudacao">
+                            Ajuste os dados e calcule sua previsão.
+                        </p>
+
+                        <div class="result-foot">
+                            <span>Frequência: <strong id="resultadoDias">4 dias/semana</strong></span>
+                            <span id="variacao">Modelo linear</span>
+                        </div>
+                    </section>
+
+                    <div class="stats-grid">
+                        <article class="stat-card">
+                            <span class="stat-icon green">▦</span>
+                            <span class="stat-label">Frequência</span>
+                            <strong id="statDias">4 dias</strong>
+                            <small>por semana</small>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-icon blue">◎</span>
+                            <span class="stat-label">Objetivo</span>
+                            <strong id="statObjetivo">Saúde e bem-estar</strong>
+                            <small>perfil informado</small>
+                        </article>
+
+                        <article class="stat-card">
+                            <span class="stat-icon purple">♙</span>
+                            <span class="stat-label">Registros</span>
+                            <strong>40 clientes</strong>
+                            <small>dataset de treino</small>
+                        </article>
+                    </div>
+
+                    <section class="card model-card">
+                        <div class="section-heading compact">
+                            <div class="heading-icon">∿</div>
+                            <div>
+                                <h2>Modelo de regressão linear</h2>
+                                <p>Coeficientes calculados manualmente.</p>
+                            </div>
+                        </div>
+
+                        <div class="model-metrics">
+                            <div class="metric equation-metric">
+                                <span>Equação da reta</span>
+                                <strong id="equacao">Y = β₀ + β₁ × X</strong>
+                            </div>
+                            <div class="metric">
+                                <span>β₀ · Intercepto</span>
+                                <strong id="beta0">—</strong>
+                            </div>
+                            <div class="metric">
+                                <span>β₁ · Inclinação</span>
+                                <strong id="beta1">—</strong>
+                            </div>
+                        </div>
+
+                        <div class="model-note">
+                            <span>✓</span>
+                            <p id="interpretacao">O modelo está pronto para calcular as estimativas.</p>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+            <div class="lower-grid">
+
+                <section class="card chart-card" id="graficoArea">
+                    <div class="section-heading">
+                        <div class="heading-icon">⌁</div>
+                        <div>
+                            <h2>Frequência × mensalidade</h2>
+                            <p>Dados observados e reta de regressão.</p>
+                        </div>
+                    </div>
+
+                    <div class="chart-legend">
+                        <span><i class="legend-dot"></i> Dados reais</span>
+                        <span><i class="legend-line"></i> Reta estimada</span>
+                        <span><i class="legend-selected"></i> Sua previsão</span>
+                    </div>
+
+                    <div class="chart-wrap">
+                        <canvas id="grafico" aria-label="Gráfico de dispersão dos clientes e reta de regressão"></canvas>
+                    </div>
+
+                    <p class="chart-caption" id="legendaGrafico">
+                        Selecione a frequência para visualizar a previsão no gráfico.
+                    </p>
+                </section>
+
+                <section class="card history-card">
+                    <div class="section-heading">
+                        <div class="heading-icon">◷</div>
+                        <div>
+                            <h2>Histórico de simulações</h2>
+                            <p>Últimas previsões calculadas.</p>
+                        </div>
+                    </div>
+
+                    <div id="historico" class="history-list">
+                        <div class="empty-state">
+                            <span>◷</span>
+                            <p>Nenhuma simulação salva.</p>
+                            <small>Calcule uma mensalidade para começar.</small>
+                        </div>
+                    </div>
+
+                    <button id="limparHistorico" type="button"
+                        class="secondary-button">
+                        Limpar histórico
+                    </button>
+                </section>
+            </div>
+
+        </section>
+
+        <section class="page-view hidden" id="view-dados">
+            <div class="welcome-row">
+                <div>
+                    <span class="eyebrow">BASE DE TREINAMENTO</span>
+                    <h1>Dados dos clientes</h1>
+                    <p>Explore os 40 registros fictícios usados no modelo.</p>
+                </div>
+                <span class="count-chip">40 registros</span>
+            </div>
+
+            <section class="card data-card">
+                <div class="data-toolbar">
+                    <input id="pesquisa" type="search"
+                        placeholder="Pesquisar cliente ou frequência...">
+                    <button type="button" id="exportarCSV" class="secondary-button">
+                        ↓ Exportar CSV
+                    </button>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Dias por semana</th>
+                                <th>Mensalidade</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaDados"></tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button type="button" id="paginaAnterior" class="secondary-button">← Anterior</button>
+                    <span id="paginaInfo">Página 1</span>
+                    <button type="button" id="paginaProxima" class="secondary-button">Próxima →</button>
+                </div>
+            </section>
+        </section>
+
+        <section class="page-view hidden" id="view-graficos">
+            <div class="welcome-row">
+                <div>
+                    <span class="eyebrow">ANÁLISE VISUAL</span>
+                    <h1>Gráficos e resultados</h1>
+                    <p>Entenda como os dados formam a reta de regressão.</p>
+                </div>
+            </div>
+
+            <section class="card chart-card large-chart">
+                <div class="section-heading">
+                    <div class="heading-icon">⌁</div>
+                    <div>
+                        <h2>Regressão linear dos 40 clientes</h2>
+                        <p>Frequência semanal e valor observado da mensalidade.</p>
+                    </div>
+                </div>
+                <div class="chart-wrap">
+                    <canvas id="graficoGrande" aria-label="Gráfico ampliado da regressão linear"></canvas>
+                </div>
+                <div class="model-note">
+                    <span>i</span>
+                    <p>A reta minimiza a soma dos quadrados das diferenças entre os valores observados e os valores estimados.</p>
+                </div>
+            </section>
+
+            <section class="card data-card">
+                <h2>Interpretação estatística</h2>
+                <div class="interpretation-grid">
+                    <div class="interpretation-item">
+                        <span>β₀</span>
+                        <h3>Intercepto</h3>
+                        <p id="explicaBeta0"></p>
+                    </div>
+                    <div class="interpretation-item">
+                        <span>β₁</span>
+                        <h3>Inclinação</h3>
+                        <p id="explicaBeta1"></p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="page-view hidden" id="view-projeto">
+            <div class="welcome-row">
+                <div>
+                    <span class="eyebrow">SOBRE O PROJETO</span>
+                    <h1>Como funciona?</h1>
+                    <p>Etapas do CASE 4 — Academia (Mensalidade Personalizada).</p>
+                </div>
+            </div>
+
+            <section class="card steps-card">
+                <article class="step">
+                    <span class="step-number">01</span>
+                    <div>
+                        <h2>Organização dos dados</h2>
+                        <p>São utilizados 40 registros fictícios. A variável X representa os dias de treino por semana, e Y representa a mensalidade em reais.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <span class="step-number">02</span>
+                    <div>
+                        <h2>Cálculo dos coeficientes</h2>
+                        <p>O JavaScript calcula as médias, o numerador, o denominador, β₁ e β₀, aplicando manualmente as fórmulas de mínimos quadrados.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <span class="step-number">03</span>
+                    <div>
+                        <h2>Previsão da mensalidade</h2>
+                        <p>Quando o cliente informa sua frequência, o sistema utiliza a equação Y estimado = β₀ + β₁X para estimar o preço.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <span class="step-number">04</span>
+                    <div>
+                        <h2>Interpretação e comparação</h2>
+                        <p>Os coeficientes podem ser comparados com os resultados de np.polyfit(X, Y, 1) no Python. Os métodos devem apresentar resultados equivalentes.</p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="card academic-note">
+                <h2>Importante para a avaliação</h2>
+                <p>Este é um projeto acadêmico com dados fictícios. O modelo usa apenas a frequência semanal para prever a mensalidade. Idade, objetivo e plano são dados informativos e não alteram a previsão. Uma aplicação comercial exigiria dados reais, validação e treinamento com as variáveis relevantes.</p>
+            </section>
+        </section>
+
+        <footer class="main-footer">
+            <span>Academia Fit</span>
+            <span>Regressão Linear · Ciência de Dados Aplicada</span>
+            <span>CASE 4 · Projeto acadêmico</span>
+        </footer>
+
+    </main>
+</div>
+
+</body>
+</html>
