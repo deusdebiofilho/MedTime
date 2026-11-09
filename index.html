@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MedTime: organize seus medicamentos, acompanhe seus horários e cuide melhor da sua rotina.">
+    <title>MedTime | Cuide melhor da sua rotina</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #30a08a;
+            --primary-dark: #17a980;
+            --primary-light: #eaf4ff;
+            --dark: #125241;
+            --text: #53677c;
+            --white: #ffffff;
+            --background: #f7faff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #edf1f5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            min-height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 23px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: .3s;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-light);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            background: linear-gradient(120deg, #f0f7ff, #ffffff);
+            padding: 90px 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 30px;
+            background: #dceeff;
+            color: var(--primary-dark);
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 55px);
+            line-height: 1.15;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-description {
+            color: var(--text);
+            font-size: 16px;
+            max-width: 510px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .hero-image {
+            background: var(--white);
+            border: 1px solid #e5edf6;
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(31, 91, 151, .12);
+        }
+
+        .mockup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .mockup-header strong {
+            font-size: 18px;
+        }
+
+        .mockup-date {
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .medication {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: #f7faff;
+            border: 1px solid #edf2f8;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .med-icon {
+            width: 43px;
+            height: 43px;
+            background: #dceeff;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 21px;
+        }
+
+        .med-info {
+            flex: 1;
+        }
+
+        .med-info strong {
+            display: block;
+            font-size: 14px;
+        }
+
+        .med-info small {
+            color: var(--text);
+            font-size: 11px;
+        }
+
+        .med-time {
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .mockup-status {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            background: #eaf8f0;
+            color: #23844d;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* SECTION GERAL */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 48px;
+        }
+
+        .section-heading span {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-heading h2 {
+            font-size: 34px;
+            line-height: 1.25;
+            margin: 12px 0;
+            letter-spacing: -1px;
+        }
+
+        .section-heading p {
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        /* BENEFÍCIOS */
+
+        .benefits {
+            background: var(--white);
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            padding: 30px;
+            border: 1px solid #e9eff6;
+            border-radius: 16px;
+            transition: .3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(31, 91, 151, .08);
+        }
+
+        .benefit-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--primary-light);
+            border-radius: 14px;
+            display: grid;
+            place-items: center;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* FUNCIONALIDADES */
+
+        .features {
+            background: var(--background);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e9eff6;
+        }
+
+        .feature-card .number {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .feature-card h3 {
+            font-size: 17px;
+            margin-bottom: 9px;
+        }
+
+        .feature-card p {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        /* COMO FUNCIONA */
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 18px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .step h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 70px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #e3f0ff;
+            font-size: 15px;
+            margin-bottom: 28px;
+        }
+
+        .cta .btn {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .cta .btn:hover {
+            background: #eaf4ff;
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #1d1f1ec3;
+            color: var(--white);
+            padding: 45px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-brand .logo {
+            color: #2ea096;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand .logo span {
+            color: var(--white);
+        }
+
+        .footer-brand p {
+            color: #b8c9d9;
+            font-size: 13px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #b8c9d9;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #30475c;
+            padding-top: 20px;
+            color: #b8c9d9;
+            font-size: 12px;
+        }
+
+        /* RESPONSIVIDADE */
+
+        @media (max-width: 850px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .benefit-grid,
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-buttons {
+                gap: 7px;
+            }
+
+            .nav-buttons .btn {
+                padding: 9px 12px;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero-image {
+                padding: 18px;
+            }
+
+            .benefit-grid,
+            .features-grid,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-heading h2,
+            .cta h2 {
+                font-size: 27px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container navbar">
+
+            <a href="index.html" class="logo">
+                Med<span>Time.</span>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-buttons">
+                <a href="pages/login.html" class="btn btn-outline">Entrar</a>
+                <a href="pages/cadastro.html" class="btn btn-primary">Criar conta</a>
+            </div>
+            
+        </div>
+    </header>
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+        <section class="hero" id="inicio">
+            <div class="container hero-content">
+
+                <div>
+                    <span class="tag">Cuidado e organização em um só lugar</span>
+
+                    <h1>
+                        Sua saúde merece uma rotina
+                        <span>mais organizada.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Com o MedTime, você organiza seus medicamentos,
+                        acompanha seus horários e registra sua rotina
+                        medicamentosa de maneira simples e prática.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="pages/cadastro.html" class="btn btn-primary">
+                            Começar agora →
+                        </a>
+
+                        <a href="#funcionalidades" class="btn btn-outline">
+                            Conhecer o sistema
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DEMONSTRAÇÃO VISUAL -->
+                <div class="hero-image">
+
+                    <div class="mockup-header">
+                        <strong>Minha rotina</strong>
+                        <span class="mockup-date">Hoje</span>
+                    </div>
+
+                    <div class="medication">
+                        <div class="med-icon">💊</div>
+                        <div class="med-info">
+                            <strong>Medicamento 01</strong>
+                            <small>Conforme sua programação</small>
+                        </div>
+                        <span class="med-time">08:00</span>
+                    </div>
+
+                    <div class="medication">
+                        <div class="med-icon">🩺</div>
+                        <div class="med-info">
+                            <strong>Medicamento 02</strong>
+                            <small>Conforme sua programação</small>
+                        </div>
+                        <span class="med-time">12:00</span>
+                    </div>
+
+                    <div class="medication">
+                        <div class="med-icon">💊</div>
+                        <div class="med-info">
+                            <strong>Medicamento 03</strong>
+                            <small>Conforme sua programação</small>
+                        </div>
+                        <span class="med-time">20:00</span>
+                    </div>
+
+                    <div class="mockup-status">
+                        ✓ Acompanhe seus registros diariamente
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BENEFÍCIOS -->
+        <section class="benefits" id="beneficios">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span>Por que usar o MedTime?</span>
+                    <h2>Mais organização para cuidar de você</h2>
+                    <p>
+                        Uma rotina medicamentosa organizada pode facilitar
+                        o acompanhamento dos seus compromissos diários.
+                    </p>
+                </div>
+
+                <div class="benefit-grid">
+
+                    <article class="benefit-card">
+                        <div class="benefit-icon">📅</div>
+                        <h3>Organização</h3>
+                        <p>
+                            Organize seus medicamentos e horários em
+                            um único ambiente.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <div class="benefit-icon">⏰</div>
+                        <h3>Acompanhamento</h3>
+                        <p>
+                            Consulte sua programação e acompanhe
+                            os registros das doses.
+                        </p>
+                    </article>
+
+                    <article class="benefit-card">
+                        <div class="benefit-icon">📊</div>
+                        <h3>Controle</h3>
+                        <p>
+                            Visualize seu histórico e tenha uma visão
+                            mais organizada da sua rotina.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FUNCIONALIDADES -->
+        <section class="features" id="funcionalidades">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span>Funcionalidades</span>
+                    <h2>Tudo o que você precisa em um só lugar</h2>
+                    <p>
+                        Conheça as principais áreas que compõem
+                        o sistema MedTime.
+                    </p>
+                </div>
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+                        <div class="number">01 — ACESSO</div>
+                        <h3>Login e cadastro</h3>
+                        <p>
+                            Acesse o sistema ou crie sua conta
+                            para começar a organizar sua rotina.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="number">02 — PAINEL</div>
+                        <h3>Dashboard</h3>
+                        <p>
+                            Tenha uma visão geral dos medicamentos
+                            e das doses programadas para o dia.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="number">03 — ORGANIZAÇÃO</div>
+                        <h3>Calendário</h3>
+                        <p>
+                            Cadastre, edite e organize seus medicamentos,
+                            horários e frequências.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="number">04 — REGISTROS</div>
+                        <h3>Histórico</h3>
+                        <p>
+                            Consulte os registros das doses tomadas
+                            e não tomadas.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="number">05 — USUÁRIO</div>
+                        <h3>Perfil</h3>
+                        <p>
+                            Consulte e gerencie suas informações
+                            pessoais cadastradas no sistema.
+                        </p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="number">06 — SIMPLICIDADE</div>
+                        <h3>Interface intuitiva</h3>
+                        <p>
+                            Utilize uma interface organizada,
+                            desenvolvida para facilitar sua experiência.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- COMO FUNCIONA -->
+        <section id="sobre">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span>Como funciona?</span>
+                    <h2>Comece a organizar sua rotina em poucos passos</h2>
+                    <p>
+                        O MedTime foi pensado para tornar o acompanhamento
+                        da sua rotina mais simples.
+                    </p>
+                </div>
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Crie sua conta</h3>
+                        <p>
+                            Cadastre suas informações para acessar
+                            o ambiente do MedTime.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Organize seus medicamentos</h3>
+                        <p>
+                            Registre seus medicamentos e configure
+                            os horários conforme sua prescrição.
+                        </p>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Acompanhe sua rotina</h3>
+                        <p>
+                            Consulte suas doses e registre
+                            o acompanhamento diário.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAMADA PARA AÇÃO -->
+        <section class="cta">
+            <div class="container">
+
+                <h2>Comece a organizar sua rotina hoje!</h2>
+
+                <p>
+                    Tenha seus medicamentos e registros organizados
+                    em um só lugar.
+                </p>
+
+                <a href="pages/cadastro.html" class="btn">
+                    Criar minha conta →
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        Med<span>Time.</span>
+                    </a>
+
+                    <p>
+                        Uma solução digital para ajudar você a organizar
+                        e acompanhar sua rotina medicamentosa.
+                    </p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <a href="#inicio">Início</a>
+                    <a href="#beneficios">Benefícios</a>
+                    <a href="#funcionalidades">Funcionalidades</a>
+                    <a href="#sobre">Sobre</a>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Acesso</h4>
+                    <a href="pages/login.html">Entrar</a>
+                    <a href="pages/cadastro.html">Criar conta</a>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                © 2026 MedTime. Projeto acadêmico desenvolvido pelo IFPI.
+                <br>
+                O sistema não substitui orientações de profissionais de saúde.
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedTime - Criar conta</title>
+
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+
+<body>
+
+    <main class="pagina">
+
+        <section class="cadastro">
+
+            <!-- LOGOTIPO -->
+            <div class="area-imagem">
+                <img
+                    src="./img/logoMedtime.png"
+                    alt="MedTime - Cuidar do seu tempo é cuidar de você"
+                    class="imagem-medtime"
+                >
+            </div>
+
+            <h1>Crie sua conta</h1>
+
+            <p class="subtitulo">
+                Preencha seus dados para se cadastrar
+            </p>
+
+            <!-- FORMULÁRIO -->
+            <form id="formCadastro">
+
+                <!-- NOME -->
+                <div class="campo">
+                    <div class="icone">
+                        <img src="./img/iconePessoa .png"
+                             alt=""
+                             class="imagem-icone">
+                    </div>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Nome completo"
+                        autocomplete="name"
+                        minlength="3"
+                        required
+                    >
+                </div>
+
+                <!-- EMAIL -->
+                <div class="campo">
+                    <div class="icone">
+                        <img src="./img/IconeEmail.png"
+                             alt=""
+                             class="imagem-icone">
+                    </div>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="E-mail"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <!-- TELEFONE -->
+                <div class="campo">
+                    <div class="icone">
+                        <img src="./img/IconeTelefone.png"
+                             alt=""
+                             class="imagem-icone">
+                    </div>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="Telefone"
+                        autocomplete="tel"
+                        required
+                    >
+                </div>
+
+                <!-- SENHA -->
+                <div class="campo">
+                    <div class="icone">
+                        <img src="./img/IconeSenha.png"
+                             alt=""
+                             class="imagem-icone">
+                    </div>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Senha"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        data-senha="senha"
+                        aria-label="Mostrar senha"
+                        aria-pressed="false"
+                    >
+                        <svg class="icone-olho"
+                             viewBox="0 0 24 24"
+                             aria-hidden="true">
+                            <path
+                                class="contorno-olho"
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                            />
+                            <circle cx="12" cy="12" r="3"/>
+                            <path class="risco-olho"
+                                  d="M4 4 20 20"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- CONFIRMAR SENHA -->
+                <div class="campo">
+                    <div class="icone">
+                        <img src="./img/IconeSenha.png"
+                             alt=""
+                             class="imagem-icone">
+                    </div>
+
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        name="confirmarSenha"
+                        placeholder="Confirmar senha"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        data-senha="confirmarSenha"
+                        aria-label="Mostrar confirmação de senha"
+                        aria-pressed="false"
+                    >
+                        <svg class="icone-olho"
+                             viewBox="0 0 24 24"
+                             aria-hidden="true">
+                            <path
+                                class="contorno-olho"
+                                d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"
+                            />
+                            <circle cx="12" cy="12" r="3"/>
+                            <path class="risco-olho"
+                                  d="M4 4 20 20"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- TERMOS -->
+                <label class="termos">
+                    <input
+                        type="checkbox"
+                        id="aceitarTermos"
+                        required
+                    >
+
+                    <span>
+                        Li e aceito os termos de uso e a política de privacidade.
+                    </span>
+                </label>
+
+                <!-- CADASTRAR -->
+                <button type="submit" class="botao-cadastrar">
+                    Cadastrar
+                </button>
+
+            </form>
+
+            <!-- LOGIN -->
+            <p class="login">
+                Já tem uma conta?
+                <a href="pages/login.html">Entrar</a>
+            </p>
+
+            <!-- MENSAGEM -->
+            <p id="mensagem" role="status" aria-live="polite"></p>
+
+        </section>
+
+    </main>
+
+    <!-- ARQUIVO JAVASCRIPT EXTERNO -->
+    <script src="js/cadastro.js" defer></script>
+
+</body>
+</html>
