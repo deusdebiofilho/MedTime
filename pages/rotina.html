@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MedTime – Rotina</title>
+  <link rel="stylesheet" href="../css/rotina.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- ================= MENU LATERAL ================= -->
+    <aside class="sidebar">
+
+      <!-- Botão voltar -->
+      <button class="btn-voltar" id="btnVoltar" aria-label="Voltar">
+        <!-- COLOQUE AQUI sua imagem da seta: imagens/voltar.png -->
+        <img src="../img/" alt="‹" class="img-opcional">
+      </button>
+
+      <!-- Logo -->
+      <div class="logo">
+        <!-- COLOQUE AQUI sua logo: imagens/logo.png -->
+        <img src="../img/icone logotipo.jpeg" alt="MedTime" class="img-opcional">
+      </div>
+
+      <nav class="menu">
+        <a href="#" class="menu-item">
+          <img src="../img/inicio.png" alt="" class="menu-icone img-opcional">
+          <span>Início</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../img/calendario.png" alt="" class="menu-icone img-opcional">
+          <span>Calendário</span>
+        </a>
+        <a href="#" class="menu-item ativo">
+          <img src="../img/rotina.png" alt="" class="menu-icone img-opcional">
+          <span>Rotina</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../img/medicamentos.png" alt="" class="menu-icone img-opcional">
+          <span>Medicamentos</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../img/historico.png" alt="" class="menu-icone img-opcional">
+          <span>Histórico</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../img/perfilnome.png" alt="" class="menu-icone img-opcional">
+          <span>Perfil</span>
+        </a>
+        <a href="#" class="menu-item">
+          <img src="../img/configuracoes.png" alt="" class="menu-icone img-opcional">
+          <span>Configurações</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- ================= CONTEÚDO ================= -->
+    <main class="conteudo">
+
+      <header class="topo">
+        <div class="topo-titulo">
+          <h1 class="pill">Rotina</h1>
+          <p class="subtitulo">Aqui está a sua rotina de hoje.</p>
+          <div class="data">
+            <img src="imagens/data-calendario.png" alt="" class="data-icone img-opcional">
+            <span id="dataHoje">sábado, 31 de maio de 2026</span>
+          </div>
+        </div>
+
+        <div class="topo-usuario">
+          <button class="btn-icone" aria-label="Notificações">
+            <img src="imagens/topo-sino.png" alt="" class="img-opcional">
+          </button>
+          <img src="imagens/topo-usuario.png" alt="" class="avatar img-opcional">
+          <span class="nome-usuario" id="nomeUsuario">Xxxxxxxxxx</span>
+        </div>
+
+        <button class="btn-calendario-canto" aria-label="Abrir calendário">
+          <img src="imagens/canto-calendario.png" alt="" class="img-opcional">
+        </button>
+      </header>
+
+      <!-- Tabela de rotina -->
+      <section class="tabela" aria-label="Lista de medicamentos de hoje">
+        <div class="tabela-cabecalho">
+          <span>Item</span>
+          <span>Frequência</span>
+          <span>Próxima dose</span>
+          <span>Tipo alerta</span>
+          <span>Tomei hoje?</span>
+          <span>Ações</span>
+        </div>
+
+        <!-- As linhas são geradas pelo script.js -->
+        <div id="listaRotina"></div>
+
+        <p class="vazio" id="msgVazia" hidden>Nenhum medicamento na rotina de hoje.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

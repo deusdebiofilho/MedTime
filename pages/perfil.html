@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTime - Meu Perfil</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+
+<body>
+
+    <main class="pagina">
+
+        <!-- MENU LATERAL -->
+        <aside class="menu-lateral">
+
+            <div class="logo">
+                <img src="../img/iconelogotipo.png" alt="Logo MedTime">
+            </div>
+
+            <nav class="navegacao">
+
+                <a href="#" class="item-menu">
+                    <img src="../img/inicio.png" class="icone" alt="">
+                    <span>Início</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="../img/calendario.png" class="icone" alt="">
+                    <span>Calendário</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="../img/rotina.png" class="icone" alt="">
+                    <span>Rotina</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="../img/medicamentos.png" class="icone" alt="">
+                    <span>Medicamentos</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="../img/historico.png" class="icone" alt="">
+                    <span>Histórico</span>
+                </a>
+
+                <a href="#" class="item-menu ativo">
+                    <span class="icone-perfil">♙</span>
+                    <span>Perfil</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="../img/configuracoes.png" class="icone" alt="">
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="conteudo">
+
+            <!-- CABEÇALHO -->
+            <header class="cabecalho">
+
+                <div class="titulo-pagina">
+                    <span class="etiqueta">Meu perfil</span>
+                    <h1>Gerencie suas informações</h1>
+                </div>
+
+                <div class="usuario-topo">
+
+                 <button class="botao-notificacao" aria-label="Notificações">
+                    <img src="../img/sinoalerta.png" alt="Notificações">
+            </button>
+
+                   <img src="../img/perfilnome.png"
+                      class="icone-usuario"
+                       alt="Perfil do usuário">
+                    <span class="nome-topo">Seu nome</span>
+
+                </div>
+
+            </header>
+
+            <!-- ÁREA DO PERFIL -->
+            <section class="area-perfil">
+
+                <!-- DADOS DO USUÁRIO -->
+                <div class="dados-usuario">
+
+                  <div class="avatar">
+                     <img src="../img/foto perfil.png" alt="Foto do perfil">
+                        </div>
+
+                    <div class="informacoes">
+
+                        <div class="nome-editar">
+                            <h2>Seu nome completo</h2>
+
+                            <button class="editar" aria-label="Editar perfil">
+                                ✎
+                            </button>
+                        </div>
+
+                        <p>
+                            <img src="../img/email.png" class="icone-dado" alt="">
+                            seuemail@email.com
+                        </p>
+
+                        <p>
+                            <img src="../img/telefone.png" class="icone-dado" alt="">
+                            (00) 00000-0000
+                        </p>
+
+                        <p>
+                            <img src="../img/localizacao.png" class="icone-dado" alt="">
+                            Sua cidade - Estado
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- ESTATÍSTICAS -->
+                <div class="estatisticas">
+
+                    <div class="estatistica">
+
+                        <div class="imagem-estatistica">
+                            <img src="../img/iconeRemedio.png"
+                                 alt="Ícone de medicamento">
+                        </div>
+
+                        <div>
+                            <strong>5</strong>
+                            <p>Lembretes ativos</p>
+                            <span>Hoje</span>
+                        </div>
+
+                    </div>
+
+                    <div class="estatistica">
+
+                        <div class="imagem-estatistica calendario">
+                            <img src="../img/dias seguidos.png"
+                                 alt="Ícone de calendário">
+                        </div>
+
+                        <div>
+                            <strong>10</strong>
+                            <p>Dias seguidos</p>
+                            <span>Esta semana</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PREFERÊNCIAS -->
+            <section class="preferencias">
+
+                <h2>Preferências do aplicativo</h2>
+
+                <!-- VOLUME -->
+                <div class="preferencia">
+
+                    <div class="icone-preferencia volume">
+                        <img src="../img/volume dos alertas.png" alt="Volume">
+                    </div>
+
+                    <div class="descricao">
+                        <h3>Volume dos alertas</h3>
+                        <p>Ajuste o volume dos sons e notificações</p>
+                    </div>
+
+                    <div class="controle-volume">
+
+                        <span>
+                            <img src="../img/volume dos alertas.png" alt="Som">
+                        </span>
+
+                        <input
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="75"
+                            id="volume"
+                        >
+
+                        <span class="porcentagem" id="valorVolume">
+                            75%
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- MODO ESCURO -->
+                <div class="preferencia">
+
+                    <div class="icone-preferencia lua">
+                        <img src="../img/modo escuro.png" alt="Modo escuro">
+                    </div>
+
+                    <div class="descricao">
+                        <h3>Modo escuro</h3>
+                        <p>Deixe o site mais confortável à noite</p>
+                    </div>
+
+                    <label class="interruptor">
+                        <input type="checkbox" id="modoEscuro">
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+                <!-- ALERTAS -->
+                <div class="preferencia">
+
+                    <div class="icone-preferencia sino">
+                        <img src="../img/iconealertaapp.png" alt="Notificações">
+                    </div>
+
+                    <div class="descricao">
+                        <h3>Alerta</h3>
+                        <p>Ative o alerta para receber as notificações do site</p>
+                    </div>
+
+                    <label class="interruptor">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+
+                </div>
+
+            </section>
+
+            <!-- SAIR DA CONTA -->
+            <button class="botao-sair"
+                onclick="alert('Você saiu da sua conta!')">
+                ⇥ &nbsp; Sair da conta
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- CONTROLE DO VOLUME E MODO ESCURO -->
+
+<script src="../js/perfil.js"></script>
+
+</body>
+</html>

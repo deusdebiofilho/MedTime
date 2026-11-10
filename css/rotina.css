@@ -1,0 +1,237 @@
+/* ===== Variáveis ===== */
+:root {
+  --verde: #16b9a5;
+  --verde-escuro: #0f766e;
+  --verde-texto: #0d6e66;
+  --azul-icone: #2f6fb3;
+  --cinza-fundo: #f0f0f0;
+  --cinza-borda: #b9b9b9;
+  --cinza-texto: #5b5b5b;
+  --texto: #1c1c1c;
+  --branco: #ffffff;
+  --fonte: 'Poppins', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: var(--fonte);
+  color: var(--texto);
+  background: var(--branco);
+  border-top: 4px solid #000;
+}
+
+button { font-family: inherit; cursor: pointer; border: 0; background: none; }
+a { color: inherit; text-decoration: none; }
+
+/* Imagens que ainda não existem: mantêm o espaço e ficam invisíveis */
+.img-opcional { display: block; }
+
+/* ===== Estrutura ===== */
+.app {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+/* ===== Menu lateral ===== */
+.sidebar {
+  position: relative;
+  padding: 14px 0 24px 12px;
+}
+
+.btn-voltar {
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  margin-bottom: 4px;
+  font-size: 26px;
+}
+.btn-voltar img { width: 18px; height: 18px; object-fit: contain; }
+
+.logo {
+  width: 150px; height: 150px;
+  margin: 0 0 18px 26px;
+  display: grid; place-items: center;
+  background: #f6f6f6;
+}
+.logo img { width: 100%; height: 100%; object-fit: contain; }
+
+.menu { display: flex; flex-direction: column; }
+
+.menu-item {
+  display: flex; align-items: center; gap: 14px;
+  height: 54px;
+  padding-left: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--texto);
+  position: relative;
+}
+
+.menu-icone { width: 30px; height: 30px; object-fit: contain; flex-shrink: 0; }
+
+.menu-item span { position: relative; z-index: 1; }
+
+/* Item ativo = pílula verde atrás do texto */
+.menu-item.ativo span {
+  background: var(--verde);
+  color: var(--branco);
+  padding: 6px 40px;
+  border-radius: 999px;
+}
+
+.menu-item:hover:not(.ativo) span { color: var(--verde-escuro); }
+
+/* ===== Conteúdo ===== */
+.conteudo { padding: 14px 24px 40px 0; min-width: 0; }
+
+.topo {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.pill {
+  display: inline-block;
+  background: var(--verde);
+  color: var(--branco);
+  font-size: 20px;
+  font-weight: 500;
+  padding: 2px 52px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.subtitulo { font-size: 15px; margin-bottom: 8px; }
+
+.data { display: flex; align-items: center; gap: 10px; }
+.data-icone { width: 32px; height: 32px; object-fit: contain; }
+#dataHoje { font-size: 24px; font-weight: 500; }
+
+.topo-usuario { display: flex; align-items: center; gap: 22px; }
+
+.btn-icone {
+  width: 52px; height: 52px;
+  border: 2px solid var(--azul-icone);
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.btn-icone img { width: 28px; height: 28px; object-fit: contain; }
+
+.avatar { width: 40px; height: 40px; object-fit: contain; }
+.nome-usuario { font-size: 26px; font-weight: 500; }
+
+.btn-calendario-canto {
+  position: absolute;
+  right: -12px; top: 70px;
+  width: 36px; height: 36px;
+}
+.btn-calendario-canto img { width: 100%; height: 100%; object-fit: contain; }
+
+/* ===== Tabela ===== */
+.tabela { background: var(--cinza-fundo); }
+
+.tabela-cabecalho,
+.linha {
+  display: grid;
+  grid-template-columns: 2.1fr 1.5fr 1.5fr 1.7fr 2.1fr 0.8fr;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.tabela-cabecalho {
+  padding: 18px 12px;
+  font-size: 15px;
+  color: var(--cinza-texto);
+}
+
+.tabela-cabecalho span:last-child { text-align: right; }
+
+#listaRotina { background: var(--cinza-fundo); }
+
+.linha {
+  background: var(--branco);
+  padding: 22px 12px;
+  margin-top: 40px;
+}
+.linha:first-child { margin-top: 10px; }
+
+/* Item */
+.item { display: flex; align-items: center; gap: 12px; }
+
+.item-icone {
+  width: 54px; height: 54px;
+  background: var(--verde);
+  border-radius: 12px;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.item-icone img { width: 34px; height: 34px; object-fit: contain; }
+
+.item-nome { font-size: 16px; font-weight: 500; }
+.item-dose { font-size: 16px; color: var(--cinza-texto); }
+
+.frequencia, .proxima { font-size: 16px; color: var(--cinza-texto); }
+
+/* Tipo de alerta */
+.alerta { display: flex; align-items: center; gap: 8px; font-size: 16px; color: var(--cinza-texto); }
+.alerta img { width: 24px; height: 24px; object-fit: contain; }
+
+/* Botões Já tomei / Não tomei */
+.tomei { display: flex; gap: 14px; }
+
+.btn-status {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 28px;
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 6px;
+  background: var(--branco);
+  transition: background .15s, color .15s;
+}
+.btn-status img { width: 14px; height: 14px; object-fit: contain; }
+
+.btn-sim { border: 1.5px solid var(--verde); color: var(--verde-texto); }
+.btn-nao { border: 1.5px solid var(--cinza-borda); color: #777; }
+
+.btn-sim.marcado { background: var(--verde); color: var(--branco); }
+.btn-nao.marcado { background: #777; color: var(--branco); border-color: #777; }
+
+.btn-status:focus-visible,
+.btn-excluir:focus-visible,
+.btn-icone:focus-visible { outline: 3px solid var(--azul-icone); outline-offset: 2px; }
+
+/* Excluir */
+.acoes { display: flex; justify-content: flex-end; }
+.btn-excluir {
+  width: 38px; height: 38px;
+  background: #e6e6e6;
+  display: grid; place-items: center;
+  border-radius: 4px;
+}
+.btn-excluir img { width: 22px; height: 22px; object-fit: contain; }
+.btn-excluir:hover { background: #d8d8d8; }
+
+.vazio { padding: 40px; text-align: center; color: var(--cinza-texto); background: var(--branco); }
+
+/* ===== Responsivo ===== */
+@media (max-width: 1000px) {
+  .tabela { overflow-x: auto; }
+  .tabela-cabecalho, .linha { min-width: 900px; }
+}
+
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { padding: 10px; }
+  .logo { margin-left: 0; width: 100px; height: 100px; }
+  .menu { flex-direction: row; flex-wrap: wrap; gap: 4px; }
+  .menu-item { height: 44px; font-size: 15px; }
+  .conteudo { padding: 10px; }
+  .topo { flex-direction: column; gap: 14px; }
+  .btn-calendario-canto { display: none; }
+}
