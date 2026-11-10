@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MedTime - Calendário</title><link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+        <!-- MENU LATERAL -->
+        <aside class="sidebar">
+
+
+               <img src="img/iconeMedTime.jpeg" alt="MedTime - Cuidado no seu tempo" class="brand-logo" > 
+            
+
+           <!-- MENU PRINCIPAL -->
+<nav class="menu" aria-label="Menu principal">
+
+    <!-- Início -->
+    <a  href="#">
+        <img src="img/icone_inicio.png" alt="" class="menu-icon">
+        <span>Início</span>
+    </a>
+
+    <!-- Calendário -->
+         <a  class="active"
+    <a href="#">
+        <img src="img/calendario.png" alt="" class="menu-icon">
+        <span>Calendário</span>
+    </a>
+
+    <!-- Rotina -->
+    <a href="#">
+        <img src="img/icone_rotina.png" alt="" class="menu-icon">
+        <span>Rotina</span>
+    </a>
+
+    <!-- Medicamentos -->
+    <a href="#">
+        <img src="img/medicamentos 2026-10-29 at 16.52.07.jpeg" alt="" class="menu-icon">
+        <span>Medicamentos</span>
+    </a>
+
+    <!-- Histórico --> 
+    <a  href="#">
+        <img src="img/historico 2026-10-29 at 16.50.18.jpeg" alt="" class="menu-icon">
+        <span>Histórico</span>
+    </a>
+       <!-- Perfil -->
+    <a href="#">
+        <img src="img/perfil 2026-10-29 at 16.49.51.jpeg" alt="" class="menu-icon">
+        <span>Perfil</span>
+    </a>
+
+    <!-- Configurações -->
+    <a href="#">
+        <img src="img/configuracoes 2026-10-29 at 16.50.05.jpeg" alt="" class="menu-icon">
+        <span>Configurações</span>
+    </a>
+
+
+</nav>
+</aside>
+<main>
+<section class="calendar-card">
+<header>
+    <h1>
+        <img src="img/calendario.jpeg" alt="Calendário" class="calendar-icon">
+        Calendário
+        <small id="heading-month">(Maio 2026)</small>
+    </h1>
+</header>
+    <div class="controls"><button id="prev">‹</button><span id="month">Maio</span><button id="next">›</button>
+    <button id="prevYear">‹</button><span id="year">2026</span><button id="nextYear">›</button></div>
+  </header>
+ <div class="mini-logo">
+    <img src="img/Logosimples.png" alt="Logo MedTime">
+</div>
+  <div class="week"><span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span></div>
+  <div class="grid" id="calendar"></div>
+</section>
+<aside class="tasks">
+<h2>
+    <img src="img/calendario.jpeg" alt="Tarefas" class="task-icon">
+    Tarefas: <span id="date">10/05/2026</span>
+</h2>  <div id="task-list">
+    <article class="task"><b>✎</b><div><strong>Ibuprofeno</strong><small>400mg</small></div><div class="time"><strong>08:00</strong><small>A cada 8h</small></div></article>
+    <article class="task gray"><b>✎</b><div><strong>Vitamina D</strong><small>30 gotas</small></div><div class="time"><strong>10:00</strong><small>A cada 24h</small></div></article>
+    <article class="task"><b>✎</b><div><strong>Amoxicilina</strong><small>500mg</small></div><div class="time"><strong>22:00</strong><small>A cada 12h</small></div></article>
+  </div>
+<button class="add" id="add">
+    Adicionar medicamento
+    <img src="img/remedio+.jpeg" alt="" class="add-icon">
+</button></aside>
+</main>
+<dialog id="modal"><form id="form"><h2>Adicionar medicamento</h2>
+<label>Nome<input id="name" required placeholder="Nome do medicamento"></label>
+<label>Dosagem<input id="dose" placeholder="Ex.: 500mg"></label>
+<label>Horário<input id="time" type="time" required></label>
+<div class="actions"><button type="button" id="cancel">Cancelar</button><button class="save">Adicionar</button></div>
+</form></dialog>
+<script src="script.js"></script>
+</body></html>
