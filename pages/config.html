@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedTime - Configurações</title>
+
+    <link rel="stylesheet" href="config.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- MENU LATERAL -->
+        <aside class="menu-lateral">
+
+            <div class="logo-area">
+
+                <button class="voltar" id="btnVoltar">‹</button>
+
+                <img src="img/IconeLogoTipo.png"
+                     alt="Logo MedTime"
+                     class="logo">
+
+            </div>
+
+
+            <!-- OPÇÕES DO MENU -->
+            <nav class="menu">
+
+                <a href="#" class="item-menu">
+                    <img src="img/IconeCasa.png" alt="" class="icone-menu">
+                    <span>Início</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="img/IconeCalendario.png" alt="" class="icone-menu">
+                    <span>Calendário</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="img/IconeNotif.png" alt="" class="icone-menu">
+                    <span>Rotina</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="img/IconeRemedio.png" alt="" class="icone-menu">
+                    <span>Medicamentos</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="img/Captura de tela 2026-11-08 191609.png" alt="" class="icone-menu">
+                    <span>Histórico</span>
+                </a>
+
+                <a href="#" class="item-menu">
+                    <img src="img/IconePerfil.png" alt="" class="icone-menu">
+                    <span>Perfil</span>
+                </a>
+
+                <a href="#" class="item-menu ativo">
+                    <img src="img/IconeConfig.png" alt="" class="icone-menu">
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="conteudo">
+
+
+            <!-- CABEÇALHO -->
+            <header class="cabecalho">
+
+                <div class="titulo-area">
+
+                    <!-- TÍTULO COM ENGRENAGEM DENTRO DO RETÂNGULO -->
+                    <div class="titulo-configuracoes">
+
+                        <img src="img/IconeEngrenagem.png"
+                             alt="Engrenagem"
+                             class="icone-titulo">
+
+                        <h1>Configurações</h1>
+
+                    </div>
+
+                    <p>
+                        Personalize sua experiência e gerencie as opções do sistema
+                    </p>
+
+                </div>
+
+
+                <!-- ÁREA DO USUÁRIO -->
+                <div class="usuario-area">
+
+                    <button class="botao-notificacao" id="btnNotificacao">
+
+                        <img src="img/IconeNotificação.png" alt="Notificações">
+
+                    </button>
+
+                    <div class="usuario">
+
+                        <img src="img/IconePerfil.png"
+                             alt="Perfil"
+                             class="imagem-usuario">
+
+                        <span>Xxxxxxxxxx</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CARTÕES DE CONFIGURAÇÕES -->
+            <section class="cartoes">
+
+
+                <!-- NOTIFICAÇÕES -->
+                
+                <a href="notificacoes.html" class="cartao">
+
+                    <img src="img/IconeNotificação.png"
+                        alt="Notificações"
+                        class="icone-cartao">
+
+                    <h2>Notificações</h2>
+
+                    <p>
+                        Escolha como e quando
+                        deseja receber lembretes.
+                    </p>
+
+                    <span class="seta">›</span>
+
+                </a>
+
+
+                <!-- PRIVACIDADE E SEGURANÇA -->
+                <button class="cartao" data-pagina="privacidade">
+
+                    <img src="img/IconeSegurança.png"
+                         alt="Segurança"
+                         class="icone-cartao">
+
+                    <h2>Privacidade e<br> Segurança</h2>
+
+                    <p>
+                        Gerencie sua privacidade
+                        e segurança.
+                    </p>
+
+                    <span class="seta">›</span>
+
+                </button>
+
+
+                <!-- SOBRE O SITE -->
+                <button class="cartao" data-pagina="sobre">
+
+                    <img src="img/IconeSobre.png"
+                         alt="Sobre o site"
+                         class="icone-cartao">
+
+                    <h2>Sobre o site</h2>
+
+                    <p>
+                        Saiba mais sobre o site.
+                    </p>
+
+                    <span class="seta">›</span>
+
+                </button>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- MENSAGEM DE INTERAÇÃO -->
+    <div class="mensagem" id="mensagem"></div>
+
+
+    <script src="config.js"></script>
+
+</body>
+</html>

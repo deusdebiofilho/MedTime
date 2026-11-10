@@ -1,0 +1,385 @@
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+    color: #111;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   MENU LATERAL
+============================== */
+
+.menu-lateral {
+    width: 201px;
+    min-width: 201px;
+    min-height: 100vh;
+    border-right: 1px solid #c9c9c9;
+    background-color: white;
+}
+
+.logo-area {
+    height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.voltar {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    border: none;
+    background: none;
+    font-size: 38px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 105px;
+    height: 90px;
+    object-fit: contain;
+}
+
+
+/* ==============================
+   MENU
+============================== */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 7px;
+}
+
+.item-menu {
+    height: 43px;
+    padding: 0 10px 0 17px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    text-decoration: none;
+    color: #111;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+.icone-menu {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.item-menu span {
+    padding: 7px 10px;
+    border-radius: 20px;
+}
+
+.item-menu:hover span,
+.item-menu.ativo span {
+    background-color: #10bda8;
+    color: white;
+}
+
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+============================== */
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.cabecalho {
+    width: 100%;
+    min-height: 85px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 17px 35px 10px 55px;
+}
+
+
+/* TÍTULO */
+
+.titulo-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-configuracoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #10bda8;
+    padding: 4px 13px;
+    border-radius: 25px;
+    width: fit-content;
+}
+
+.icone-titulo {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+}
+
+.titulo-configuracoes h1 {
+    color: white;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.titulo-area p {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+/* ==============================
+   USUÁRIO E NOTIFICAÇÕES
+============================== */
+
+.usuario-area {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.botao-notificacao {
+    width: 45px;
+    height: 45px;
+    border: 1.5px solid #0875e8;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.botao-notificacao img {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+}
+
+.imagem-usuario {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+
+/* ==============================
+   CARTÕES DE CONFIGURAÇÕES
+============================== */
+
+.cartoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    margin: 150px auto 0;
+    padding: 0 25px;
+}
+
+.cartao {
+    width: 256px;
+    height: 199px;
+
+    border: 1px solid #c5c5c5;
+    background-color: white;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 13px 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    /* CORREÇÃO DOS LINKS */
+    text-decoration: none !important;
+    color: #111 !important;
+}
+
+
+/* IMAGENS DOS CARTÕES */
+
+.icone-cartao {
+    width: 39px;
+    height: 39px;
+    object-fit: contain;
+    margin-bottom: 7px;
+}
+
+
+/* TÍTULOS */
+
+.cartao h2 {
+    font-size: 25px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #111;
+    text-decoration: none;
+}
+
+
+/* DESCRIÇÕES */
+
+.cartao p {
+    font-size: 17px;
+    color: #999;
+    text-align: center;
+    line-height: 27px;
+    text-decoration: none;
+}
+
+
+/* SETAS */
+
+.seta {
+    position: absolute;
+    right: 9px;
+    bottom: 5px;
+    font-size: 36px;
+    color: black;
+    line-height: 1;
+    text-decoration: none;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.cartao:hover {
+    border-color: #10bda8;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+    text-decoration: none;
+    color: #111;
+}
+
+
+/* EVITAR LINK AZUL E SUBLINHADO */
+
+a.cartao,
+a.cartao:link,
+a.cartao:visited,
+a.cartao:hover,
+a.cartao:active {
+    color: #111;
+    text-decoration: none !important;
+}
+
+
+/* ==============================
+   MENSAGEM
+============================== */
+
+.mensagem {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #10bda8;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 8px;
+    display: none;
+}
+
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+
+@media (max-width: 900px) {
+
+    .cartoes {
+        flex-wrap: wrap;
+        margin-top: 90px;
+    }
+
+    .cabecalho {
+        padding-left: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .menu-lateral {
+        width: 75px;
+        min-width: 75px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    .item-menu {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .item-menu span {
+        display: none;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .usuario-area {
+        align-self: flex-end;
+    }
+
+    .cartoes {
+        margin-top: 40px;
+        padding: 10px;
+    }
+
+    .cartao {
+        width: 100%;
+        max-width: 300px;
+    }
+
+}
