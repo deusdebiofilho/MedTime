@@ -1,0 +1,426 @@
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #111;
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =====================================
+   MENU LATERAL
+===================================== */
+
+.sidebar {
+    width: 238px;
+    min-width: 238px;
+    height: 100vh;
+    background: #fff;
+    border-right: 1px solid #e9eeee;
+    padding: 10px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+
+/* BOTÃO VOLTAR */
+
+.back {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    border: 0;
+    background: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #111;
+}
+
+
+/* LOGOTIPO */
+
+.brand-logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    margin: 0 auto 10px;
+}
+
+
+/* =====================================
+   MENU PRINCIPAL
+===================================== */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+
+/* CADA ITEM DO MENU */
+
+.menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    height: 42px;
+    padding: 0 5px;
+
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+
+/* ÍCONES DO MENU */
+
+.menu-icon {
+    display: block;
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
+    object-fit: contain;
+}
+
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.menu-item:hover {
+    background: #f0faf9;
+    color: #079c91;
+}
+
+
+/* ITEM SELECIONADO */
+
+.menu-item.active {
+    background: #13b8a8;
+    color: #fff;
+    font-weight: 700;
+}
+
+
+/* =====================================
+   CONTEÚDO PRINCIPAL
+===================================== */
+
+.main {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 35px 12px 0;
+}
+
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.topbar {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 25px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* TÍTULO NOTIFICAÇÕES */
+
+.notification-title {
+    width: 144px;
+    height: 27px;
+    background: #13b8a8;
+    color: white;
+    border-radius: 9px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.header-content p {
+    font-size: 9px;
+    margin-top: 7px;
+    color: #111;
+}
+
+
+/* =====================================
+   PERFIL
+===================================== */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.profile-icon {
+    font-size: 31px;
+    color: #20c99a;
+}
+
+
+/* =====================================
+   ABAS DE NOTIFICAÇÕES
+===================================== */
+
+.notifications {
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.tabs {
+    height: 47px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 25px;
+}
+
+.tab {
+    background: none;
+    border: 0;
+    font-size: 16px;
+    cursor: pointer;
+    color: #111;
+    position: relative;
+    padding: 5px 0;
+}
+
+
+/* ABA ATIVA */
+
+.tab.active {
+    color: #13b8a8;
+}
+
+
+/* CONTADOR DE NÃO LIDAS */
+
+.counter {
+    position: absolute;
+    top: -12px;
+    right: -25px;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+    background: #dedede;
+    color: #111;
+
+    font-size: 11px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =====================================
+   CARTÕES DE NOTIFICAÇÕES
+===================================== */
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding-left: 0;
+}
+
+.notification {
+    min-height: 69px;
+    border: 1px solid #d5eeee;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 18px 10px 35px;
+    background: white;
+    gap: 24px;
+}
+
+
+/* ÍCONES DAS NOTIFICAÇÕES */
+
+.notification-icon {
+    width: 39px;
+    height: 39px;
+    min-width: 39px;
+
+    border: 1px solid #13b8a8;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    color: #079e96;
+    font-size: 24px;
+}
+
+
+/* ÍCONE DE MEDICAMENTO */
+
+.medicine-icon span {
+    position: absolute;
+    font-size: 12px;
+    right: 1px;
+    bottom: 2px;
+    background: white;
+}
+
+
+/* ÍCONE DE CÁPSULA */
+
+.capsule-icon {
+    font-size: 28px;
+    transform: rotate(-35deg);
+}
+
+
+/* ÍCONE DE CALENDÁRIO */
+
+.calendar-icon {
+    font-size: 22px;
+}
+
+.calendar-icon span {
+    position: absolute;
+    font-size: 13px;
+    bottom: 0;
+    right: 0;
+    background: white;
+}
+
+
+/* =====================================
+   TEXTOS DAS NOTIFICAÇÕES
+===================================== */
+
+.notification-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-info h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.notification-info p {
+    color: #999;
+    font-size: 11px;
+}
+
+
+/* =====================================
+   HORÁRIO DAS NOTIFICAÇÕES
+===================================== */
+
+.notification-time {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.notification-time i {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #13b8a8;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        width: 75px;
+        min-width: 75px;
+        padding: 10px 7px;
+    }
+
+    .brand-logo {
+        width: 65px;
+        height: 65px;
+    }
+
+    .menu-item {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .menu-item span {
+        display: none;
+    }
+
+    .main {
+        padding-right: 10px;
+    }
+
+    .topbar {
+        padding-left: 10px;
+    }
+
+    .tabs {
+        padding-left: 10px;
+        gap: 15px;
+    }
+
+    .notification {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .notification-info h3 {
+        font-size: 13px;
+    }
+
+    .notification-info p {
+        font-size: 9px;
+    }
+
+}
