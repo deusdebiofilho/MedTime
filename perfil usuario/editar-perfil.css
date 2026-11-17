@@ -1,0 +1,474 @@
+
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #17346b;
+    overflow-x: hidden;
+}
+
+/* CONTAINER PRINCIPAL */
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    align-items: stretch;
+}
+
+/* MENU LATERAL */
+
+.sidebar {
+    width: 220px;
+    min-width: 220px;
+    min-height: 100vh;
+    background: #ffffff;
+    padding: 25px 15px;
+    border-right: 1px solid #e5e9ed;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.voltar {
+    color: #17346b;
+    text-decoration: none;
+    font-size: 32px;
+    line-height: 30px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0 35px;
+}
+
+.logo img {
+    width: 145px;
+    max-height: 85px;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.menu a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 43px;
+    padding: 8px 12px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #202020;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.menu a img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.menu a:hover:not(.ativo) {
+    background: #e9f8f6;
+}
+
+.menu a.ativo {
+    background: linear-gradient(90deg, #20b99a, #00a88c);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 184, 170, 0.35);
+}
+
+.menu a.ativo img {
+    filter: brightness(0) invert(1);
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.conteudo {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    background: #ffffff;
+    padding: 38px 48px;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.titulo-pagina h1 {
+    display: inline-block;
+    background: #00b8aa;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 13px 35px;
+}
+
+.titulo-pagina p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notificacao {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notificacao img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+}
+
+.foto-usuario {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nome-usuario {
+    color: #222;
+    font-size: 13px;
+}
+
+/* CARTÃO DE PERFIL */
+
+.card-perfil {
+    width: 100%;
+    border: 1px solid #dedede;
+    padding: 30px;
+    min-height: 430px;
+}
+
+.card-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.identificacao {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.identificacao img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.identificacao h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #202020;
+}
+
+.identificacao p {
+    font-size: 13px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.btn-foto {
+    background: white;
+    border: 1px solid #00b8aa;
+    color: #222;
+    padding: 12px 28px;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-foto:hover {
+    background: #e9f8f6;
+}
+
+/* FORMULÁRIO */
+
+.form-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-left: 48px;
+    padding-bottom: 10px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo label {
+    font-size: 14px;
+    color: #222;
+}
+
+.campo input {
+    width: 388px;
+    max-width: 100%;
+    height: 44px;
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    font-size: 13px;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus {
+    border-color: #00b8aa;
+    box-shadow: 0 0 4px rgba(0, 184, 170, 0.2);
+}
+
+#localizacao,
+#telefone {
+    width: 388px;
+    max-width: 100%;
+}
+
+/* BOTÕES */
+
+.campo-acao,
+.campo-senha {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-salvar {
+    width: 130px;
+    height: 43px;
+    background: #00b8aa;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-salvar:hover {
+    background: #009f95;
+}
+
+.btn-senha {
+    height: 44px;
+    padding: 0 18px;
+    background: white;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #333;
+    cursor: pointer;
+}
+
+.btn-senha span {
+    font-size: 19px;
+    margin-left: 8px;
+}
+
+.mensagem {
+    font-size: 12px;
+    color: #009f95;
+}
+
+/* SESSÕES ATIVAS */
+
+.card-sessoes {
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
+    padding: 25px 30px;
+    margin-top: 25px;
+}
+
+.titulo-sessoes {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.titulo-sessoes img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.titulo-sessoes h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+}
+
+.titulo-sessoes p {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.lista-sessoes {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.sessao {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.icone-dispositivo {
+    width: 35px;
+    height: 35px;
+    background: #00b8aa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.icone-dispositivo span {
+    font-size: 18px;
+}
+
+.informacoes-sessao h3 {
+    font-size: 13px;
+    font-weight: 500;
+    color: #222;
+}
+
+.informacoes-sessao p {
+    font-size: 11px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    .container {
+        padding: 0;
+    }
+
+    .sidebar {
+        width: 75px;
+        min-width: 75px;
+        padding: 15px 7px;
+    }
+
+    .logo img {
+        width: 55px;
+    }
+
+    .menu a {
+        justify-content: center;
+        padding: 8px 4px;
+    }
+
+    .menu a span {
+        display: none;
+    }
+
+    .conteudo {
+        padding: 25px 15px;
+    }
+
+    .cabecalho {
+        flex-wrap: wrap;
+    }
+
+    .form-perfil {
+        padding-left: 0;
+    }
+
+    .lista-sessoes {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .sidebar {
+        width: 60px;
+        min-width: 60px;
+    }
+
+    .card-perfil {
+        padding: 20px 15px;
+    }
+
+    .card-titulo {
+        align-items: flex-start;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .campo-acao,
+    .campo-senha {
+        flex-wrap: wrap;
+    }
+
+    .campo input {
+        width: 100%;
+    }
+
+    .lista-sessoes {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

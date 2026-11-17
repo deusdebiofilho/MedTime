@@ -17,43 +17,43 @@
         <aside class="menu-lateral">
 
             <div class="logo">
-                <img src="./img/iconelogotipo.png" alt="Logo MedTime">
+                <img src="../img/iconelogotipo.png" alt="Logo MedTime">
             </div>
 
             <nav class="navegacao">
 
                 <a href="#" class="item-menu">
-                    <img src="./img/inicio.png" class="icone" alt="">
+                    <img src="../img/inicio (2).png" class="icone" alt="">
                     <span>Início</span>
                 </a>
 
                 <a href="#" class="item-menu">
-                    <img src="./img/calendario.png" class="icone" alt="">
+                    <img src="../img/calendario (2).png" class="icone" alt="">
                     <span>Calendário</span>
                 </a>
 
                 <a href="#" class="item-menu">
-                    <img src="./img/rotina.png" class="icone" alt="">
+                    <img src="../img/rotina (2).png" class="icone" alt="">
                     <span>Rotina</span>
                 </a>
 
                 <a href="#" class="item-menu">
-                    <img src="./img/medicamentos.png" class="icone" alt="">
+                    <img src="../img/medicamentos (2).png" class="icone" alt="">
                     <span>Medicamentos</span>
                 </a>
 
                 <a href="#" class="item-menu">
-                    <img src="./img/historico.png" class="icone" alt="">
+                    <img src="../img/historico (2).png" class="icone" alt="">
                     <span>Histórico</span>
                 </a>
 
                 <a href="#" class="item-menu ativo">
-                    <span class="icone-perfil">♙</span>
+                    <img src="../img/iconemenuperfil (2).png" class="icone" alt="">
                     <span>Perfil</span>
                 </a>
 
                 <a href="#" class="item-menu">
-                    <img src="./img/configuracoes.png" class="icone" alt="">
+                    <img src="../img/configuracoes (2).png" class="icone" alt="">
                     <span>Configurações</span>
                 </a>
 
@@ -73,14 +73,19 @@
 
                 <div class="usuario-topo">
 
-                 <button class="botao-notificacao" aria-label="Notificações">
-                    <img src="./img/sinoalerta.png" alt="Notificações">
-            </button>
+                    <button class="botao-notificacao" aria-label="Notificações">
+                        <img src="../img/sinoalerta (2).png" alt="Notificações">
+                    </button>
 
-                   <img src="./img/perfilnome.png"
-                      class="icone-usuario"
-                       alt="Perfil do usuário">
-                    <span class="nome-topo">Seu nome</span>
+                    <img
+                        src="../img/iconemenuperfil.png"
+                        class="icone-usuario"
+                        alt="Perfil do usuário"
+                        id="fotoCabecalho">
+
+                    <span class="nome-topo" id="nomeCabecalho">
+                        xxxxxxx
+                    </span>
 
                 </div>
 
@@ -92,33 +97,42 @@
                 <!-- DADOS DO USUÁRIO -->
                 <div class="dados-usuario">
 
-                  <div class="avatar">
-                     <img src="./img/foto perfil.png" alt="Foto do perfil">
-                        </div>
+                    <div class="avatar">
+                        <img
+                            src="../img/foto perfil.png"
+                            alt="Foto do perfil"
+                            id="fotoPerfil">
+                    </div>
 
                     <div class="informacoes">
 
                         <div class="nome-editar">
-                            <h2>Seu nome completo</h2>
 
-                            <button class="editar" aria-label="Editar perfil">
+                            <h2 id="nomePerfil">Seu nome completo</h2>
+
+                            <!-- CANETINHA -->
+                            <a href="../perfil%20usuario/editar-perfil.html"
+                               class="editar"
+                               aria-label="Editar perfil"
+                               title="Editar perfil">
                                 ✎
-                            </button>
+                            </a>
+
                         </div>
 
                         <p>
-                            <img src="./img/email.png" class="icone-dado" alt="">
-                            seuemail@email.com
+                            <img src="../img/email.png" class="icone-dado" alt="">
+                            <span id="emailPerfil">seuemail@email.com</span>
                         </p>
 
                         <p>
-                            <img src="./img/telefone.png" class="icone-dado" alt="">
-                            (00) 00000-0000
+                            <img src="../img/telefone.png" class="icone-dado" alt="">
+                            <span id="telefonePerfil">(00) 00000-0000</span>
                         </p>
 
                         <p>
-                            <img src="./img/localizacao.png" class="icone-dado" alt="">
-                            Sua cidade - Estado
+                            <img src="../img/localizacao.png" class="icone-dado" alt="">
+                            <span id="localizacaoPerfil">Sua cidade - Estado</span>
                         </p>
 
                     </div>
@@ -130,7 +144,7 @@
                     <div class="estatistica">
 
                         <div class="imagem-estatistica">
-                            <img src="./img/iconeRemedio.png"
+                            <img src="../img/iconeRemedio.png"
                                  alt="Ícone de medicamento">
                         </div>
 
@@ -145,7 +159,7 @@
                     <div class="estatistica">
 
                         <div class="imagem-estatistica calendario">
-                            <img src="./img/dias seguidos.png"
+                            <img src="../img/dias seguidos.png"
                                  alt="Ícone de calendário">
                         </div>
 
@@ -170,7 +184,7 @@
                 <div class="preferencia">
 
                     <div class="icone-preferencia volume">
-                        <img src="./img/volume dos alertas.png" alt="Volume">
+                        <img src="../img/volume dos alertas.png" alt="Volume">
                     </div>
 
                     <div class="descricao">
@@ -181,7 +195,7 @@
                     <div class="controle-volume">
 
                         <span>
-                            <img src="./img/volume dos alertas.png" alt="Som">
+                            <img src="../img/volume dos alertas.png" alt="Som">
                         </span>
 
                         <input
@@ -189,8 +203,7 @@
                             min="0"
                             max="100"
                             value="75"
-                            id="volume"
-                        >
+                            id="volume">
 
                         <span class="porcentagem" id="valorVolume">
                             75%
@@ -204,7 +217,7 @@
                 <div class="preferencia">
 
                     <div class="icone-preferencia lua">
-                        <img src="./img/modo escuro.png" alt="Modo escuro">
+                        <img src="../img/modo escuro.png" alt="Modo escuro">
                     </div>
 
                     <div class="descricao">
@@ -223,7 +236,7 @@
                 <div class="preferencia">
 
                     <div class="icone-preferencia sino">
-                        <img src="./img/iconealertaapp.png" alt="Notificações">
+                        <img src="../img/iconealertaapp.png" alt="Notificações">
                     </div>
 
                     <div class="descricao">
@@ -250,9 +263,9 @@
 
     </main>
 
-    <!-- CONTROLE DO VOLUME E MODO ESCURO -->
-
-<script src="script.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
 
 </body>
 </html>
+
